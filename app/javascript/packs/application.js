@@ -21,6 +21,7 @@ import 'bootstrap'
 import './bootstrap_custom.js';
 
 let works;
+require('../javascript/javascript.js.erb');
 require('../javascript/questions.js');
 require('../javascript/tool.js');
 // import * as tool from '../javascript/tool.js';

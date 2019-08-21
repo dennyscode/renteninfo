@@ -1,3 +1,5 @@
+console.log("TESTING TOOL.JS")
+
 let rentenrechner_out
 let max_forms
 rentenrechner_out = []
