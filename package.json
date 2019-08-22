@@ -20,5 +20,8 @@
   },
   "engines": {
     "yarn": ">= 0.25.2"
+  },
+  "scripts": {
+    "start:dev": "webpack-dev-server"
   }
 }
