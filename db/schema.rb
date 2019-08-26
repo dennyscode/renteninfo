@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_201212) do
+ActiveRecord::Schema.define(version: 2019_08_26_195924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,20 @@ ActiveRecord::Schema.define(version: 2019_08_20_201212) do
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "rente_estimate"
+    t.integer "rente_art"
+    t.integer "rente_start"
+    t.integer "rente_dauer"
+    t.integer "rente_eink"
+    t.integer "rente_reg"
+    t.integer "rente_kinder"
+    t.integer "rente_kinder_gebjahr", default: [], array: true
+    t.integer "rente_betrieb"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

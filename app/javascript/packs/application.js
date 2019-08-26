@@ -19,6 +19,8 @@ require("trix")
 require("@rails/actiontext")
 import 'bootstrap'
 import './bootstrap_custom.js';
+require.context('../images', true);
+
 
 let works;
 require('../javascript/javascript.js.erb');
@@ -26,7 +28,7 @@ require('../javascript/questions.js');
 require('../javascript/tool.js');
 // import * as tool from '../javascript/tool.js';
 // console.log(tool)
-require.context('../images', true);
+require('../images/images.js.erb');
 
 
 import '../stylesheets/application.scss';

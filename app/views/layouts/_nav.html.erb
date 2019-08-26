@@ -1,0 +1,17 @@
+<nav class="nav_container">
+    <h1 class="nav_header">Rentenrechner</h1>
+    <%= image_pack_tag "FinalIconTransparent.png", size: '164x142', :class => 'nav_image' %>
+    <ul class="nav_links">
+        <%= link_to 'Home', root_path, :class => 'nav_link' %>
+        <%= link_to 'Infos', posts_path, :class => 'nav_link' %>
+        <%= link_to 'Online-Assistenten', rechner_path, :class => 'nav_link' %>
+        <%= link_to 'Mehr erfahren', rechner_path, :class => 'nav_link' %>
+        <%= link_to 'Impressum', impressum_path, :class => 'nav_link' %>
+    </ul>
+    <span class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </span>
+</nav>
+

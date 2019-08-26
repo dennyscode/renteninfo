@@ -1,0 +1,38 @@
+@import './variables';
+
+@mixin hover_effect {
+    transition: 0.3s;
+}
+
+.nav_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_links {
+    width: 50%;
+    display: flex;
+}
+
+.nav_link {
+    border-bottom: 2px solid $sub_col;
+    font-size: 1em;
+    color: $sub_col;
+    text-decoration: none;
+    flex-grow: 1;
+    padding: 1em;
+    text-align: center;
+}
+
+.nav_link:hover {
+    @include hover_effect;
+    font-weight: bold;
+    text-decoration: none;
+    color: $main_col;
+    font-weight: bold;
+    border-bottom: 2px solid $main_col;
+}
+
+
