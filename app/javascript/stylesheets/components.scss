@@ -1,0 +1,16 @@
+
+.intro {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.intro__item {}
+
+
+.icon {
+    color: $sub_col;
+    width: 6rem;
+    border-radius: 50%;
+    border: .3rem solid black;
+}
