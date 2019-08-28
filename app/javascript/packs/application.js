@@ -16,9 +16,11 @@ import './bootstrap_custom.js';
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+require("trix")
+require("@rails/actiontext")
+
 import 'trix';
 import 'trix/dist/trix.js';
-import "trix/dist/trix.css";
 // import { Trix } from "trix";
 // require("@rails/actiontext")
 
