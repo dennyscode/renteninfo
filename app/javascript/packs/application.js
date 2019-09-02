@@ -18,7 +18,7 @@ import './bootstrap_custom.js';
 // const imagePath = (name) => images(name, true)
 require("trix")
 require("@rails/actiontext")
-
+// require("@fortawesome/fontawesome-free/js/all")
 import 'trix';
 import 'trix/dist/trix.js';
 // import { Trix } from "trix";
@@ -28,7 +28,7 @@ require.context('../images', true);
 
 
 let works;
-require('../javascript/javascript.js.erb');
+// require('../javascript/javascript.js.erb');
 require('../javascript/questions.js');
 require('../javascript/tool.js');
 // import * as tool from '../javascript/tool.js';
