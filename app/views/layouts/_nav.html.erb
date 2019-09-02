@@ -1,5 +1,6 @@
 <nav class="nav_container">
     <div class="nav__login">
+    
         <% if user_signed_in? %>
             <p>Logged in as <strong><%= current_user.email %></strong>.</p>
             <%= link_to edit_user_registration_path, :class => 'icon__logoutlink', method: :delete do %>
