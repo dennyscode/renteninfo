@@ -1,0 +1,22 @@
+/* --------------------------------------------------
+
+   Breakpoint Settings
+   -------------------------------------------------- */
+
+// min or max
+$media-direction:       min;  // min / max — default is min (mobile first)
+
+
+
+// Breakpoints
+// A Sass Map for all Breakpoints you need. But keep it simple! Just add Sizes that you need several times.
+// Here are my basic set. I change the values a bit from project to project
+$breakpoints: (
+  'default':            '',
+  'sm':                 380px,
+  'xs':                 480px,
+  'md':                  667px,
+  'lg':                  1024px,
+  'xl':                  1280px,
+  'xxl':                 1680px,
+);

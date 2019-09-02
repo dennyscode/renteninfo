@@ -1,5 +1,7 @@
 //= require actiontext
-
+@import './settings/variables';
+@import './settings/breakpoints';
+@import './mixins/mixins_breakpoints';
 @import './posts';
 @import './bootstrap_customs';
 @import './scaffolds';

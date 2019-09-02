@@ -1,17 +1,57 @@
 <nav class="nav_container">
-    <h1 class="nav_header">Rentenrechner</h1>
-    <%= image_pack_tag "FinalIconTransparent.png", size: '164x142', :class => 'nav_image' %>
-    <ul class="nav_links">
-        <%= link_to 'Home', root_path, :class => 'nav_link' %>
-        <%= link_to 'Infos', posts_path, :class => 'nav_link' %>
-        <%= link_to 'Online-Assistenten', rechner_path, :class => 'nav_link' %>
-        <%= link_to 'Mehr erfahren', rechner_path, :class => 'nav_link' %>
-        <%= link_to 'Impressum', impressum_path, :class => 'nav_link' %>
+    <div class="nav__login">
+        <% if user_signed_in? %>
+            <p>Logged in as <strong><%= current_user.email %></strong>.</p>
+            <%= link_to edit_user_registration_path, :class => 'icon__logoutlink', method: :delete do %>
+                <%= image_pack_tag "icon_settings.png", :class => 'icon__logout' %>
+            <% end %>
+            <%= link_to destroy_user_session_path, :class => 'icon__logoutlink', method: :delete do %>
+                <%= image_pack_tag "icon_logout.png", :class => 'icon__logout' %>
+            <% end %>
+
+        <% else %>
+            <%= link_to "Sign up", new_user_registration_path, :class => 'icon__signup'  %> |
+            <%= link_to "Login", new_user_session_path, :class => 'icon__login'  %>
+        <% end %>
+    </div>
+
+    <div class="nav__header">
+        <%= image_pack_tag "FinalIconTransparent.png", :class => 'nav__image' %>
+        <h1 class="nav__title">Rentenrechner</h1>
+    </div>
+    <i class="fas fa-sign-out-alt"></i>
+    <ul class="nav__links">
+        <%= link_to 'Home', root_path, :class => 'nav__link' %>
+        <%= link_to 'Infos', posts_path, :class => 'nav__link' %>
+        <%= link_to 'Online-Assistenten', rechner_path, :class => 'nav__link' %>
+        <%= link_to 'Mehr erfahren', rechner_path, :class => 'nav__link' %>
+        <%= link_to 'Impressum', impressum_path, :class => 'nav__link' %>
     </ul>
-    <span class="hamburger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+
+
+    <span class="nav__hamburger">
+        <div class="hamburger__line"></div>
+        <div class="hamburger__line"></div>
+        <div class="hamburger__line"></div>
     </span>
 </nav>
 
+<!--
+Images:
+
+https://pixabay.com/photos/calculator-calculation-insurance-385506/
+https://pixabay.com/photos/calculator-calculation-insurance-385506/
+https://pixabay.com/photos/money-coin-investment-business-2724241/
+https://pixabay.com/photos/credit-squeeze-taxation-purse-tax-522549/
+https://pixabay.com/photos/calculator-calculation-insurance-1680905/
+https://pixabay.com/photos/money-grow-interest-save-invest-1604921/
+https://pixabay.com/photos/mushroom-fungi-fungus-many-food-389421/
+https://pixabay.com/photos/money-savings-piggy-white-1885540/
+https://pixabay.com/photos/bitcoin-cryptocurrency-digital-2007769/
+https://pixabay.com/photos/bulletin-board-laptop-computer-3233653/
+https://pixabay.com/photos/business-idea-planning-business-plan-534228/
+https://pixabay.com/photos/piggy-bank-saving-money-young-woman-850607/
+https://pixabay.com/photos/cottage-lake-water-nature-summer-1550083/
+https://pixabay.com/photos/beach-senior-man-male-walking-2090091/
+
+-->
