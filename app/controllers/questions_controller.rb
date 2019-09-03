@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
     end
 
     def rechner
+        @questions = Question.all
     end
 
 end

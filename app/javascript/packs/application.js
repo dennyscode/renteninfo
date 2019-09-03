@@ -31,6 +31,8 @@ let works;
 // require('../javascript/javascript.js.erb');
 require('../javascript/questions.js');
 require('../javascript/tool.js');
+require('../javascript/javascript.js');
+
 // import * as tool from '../javascript/tool.js';
 // console.log(tool)
 require('../images/images.js.erb');
@@ -40,4 +42,6 @@ import '../stylesheets/application.scss';
 
 document.addEventListener("turbolinks:load", () => {
     console.log('Hello World from Webpacker');
+    document.querySelector(".nav_container").setAttribute("show", "true");
+
 });
