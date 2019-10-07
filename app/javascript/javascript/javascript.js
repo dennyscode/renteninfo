@@ -29,6 +29,5 @@ function myFunction(x) {
   var x = window.matchMedia("(max-width: 768px)")
   myFunction(x) // Call listener function at run time
   x.addListener(myFunction) // Attach listener function on state changes
-    document.querySelector(".nav_container").setAttribute("show", "true");
 
 });
