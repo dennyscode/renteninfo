@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
+gem 'log4r', '~> 1.1', '>= 1.1.10'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2'
 gem 'sassc', require: false
@@ -37,7 +38,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'log4r', '~> 1.1', '>= 1.1.10'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
