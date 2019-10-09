@@ -9,28 +9,31 @@
 
 nav {
     color: $main_col;
+    display: flex;
+    flex-direction: column;
 }
 
 .nav_header {
     text-align: center;
-    width: 100%;
+    // width: 100%;
     display: flex;
-    justify-content: center;
+    background-color: $nav_col;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: 2vw;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .line {
     margin: 8%;
     height: .75vh;
-    background-color: orange;
+    background-color: $main_col;
 }
 
 .nav_hamburger {
     display: inline-block;
     position: absolute;
-    border: 4px solid orange;
+    border: 4px solid $main_col;
     right: 5%;
     top: 3%;
     border-radius: 10%;
@@ -65,10 +68,10 @@ nav {
 }
 
 .nav-item {
-    height: 4vh;
     width: 80%;
     border-bottom: 2px solid $sub_col;
     text-align: center;
+    padding: .5em;
 
 
     .nav__link {
@@ -89,6 +92,15 @@ nav {
     border-bottom: 2px solid $main_col;
     .nav__link {
         color: $main_col;}
+}
+
+.nav__title {
+    margin-left: .25em;
+}
+
+.nav__image {
+    width: 15%;
+    margin: .25em;
 }
 
 .logo {
@@ -126,7 +138,6 @@ nav {
 /* Extra large devices (large desktops, 1200px and up) */
 @media (max-width: 1200px) {
     .nav-item {
-        height: 7vh;
     }
 }
 
@@ -135,3 +146,13 @@ nav {
     from {background-color: $sub_col;}
     to {background-color: $main_col;}
   }
+
+
+@media (max-width: 576px) {
+}
+@media (min-width: 768px) {
+}
+@media (max-width: 992px) {
+}
+@media (max-width: 1200px) {
+}
