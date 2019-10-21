@@ -9,7 +9,6 @@ class QuestionsController < ApplicationController
         hilfsvar1(@question.rente_estimate, @question.rente_art, @question.rente_start, @question.rente_dauer, @question.rente_eink, @question.rente_reg, @question.rente_kinder, @question.rente_kinder_gebjahr, @question.rente_betrieb)
         hilfsvar2(@question.rente_estimate, @question.rente_art, @question.rente_start, @question.rente_dauer, @question.rente_eink, @question.rente_reg, @question.rente_kinder, @question.rente_kinder_gebjahr, @question.rente_betrieb)
         hilfsvar3(@question.rente_estimate, @question.rente_art, @question.rente_start, @question.rente_dauer, @question.rente_eink, @question.rente_reg, @question.rente_kinder, @question.rente_kinder_gebjahr, @question.rente_betrieb)
-        response.body =>  # "HUHU"
     end
 
     def rechner
