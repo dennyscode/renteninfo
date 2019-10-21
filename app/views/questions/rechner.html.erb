@@ -1,58 +1,74 @@
 <h2>Rechner</h2>
+<!-- <dialog> -->
 
-<div class="questions_container">
-  <%= form_with model: @question, class: "nifty_form" do |f| %>
-    <div class="questions_item">
-      <%= f.label :rente_estimate, "Wie hoch schätzen Sie Ihren monatlichen Bedarf als Rentner/in (Wohnungskosten, Versorgung, etc.)?" %>
-      <%= f.text_field :rente_estimate %>
-    </div>
+  <div class="questions_container">
+    <%= form_with model: @question, local: true, class: "nifty_form" do |f| %>
+      <div class="questions_item">
+        <%= f.label :rente_estimate, "Wie hoch schätzen Sie Ihren monatlichen Bedarf als Rentner/in (Wohnungskosten, Versorgung, etc.)?" %>
+        <%= f.text_field :rente_estimate %>
+      </div>
 
-    <div class="questions_item">
-      <%= f.label :rente_art, "Welche Art von Beschäftigungsverhältnis liegt vor?" %>
-      <%= f.select :rente_art, ["abhängig beschäftigt", "selbstständig"] %>
-    </div>
+      <div class="questions_item">
+        <%= f.label :rente_art, "Welche Art von Beschäftigungsverhältnis liegt vor?" %>
+        <%= f.select :rente_art, f.options_for_select(
+        [
+          ['abhängig beschäftigt', 0, { 'data-size' => '0' }],
+          ['selbstständig', 1, { 'data-size' => '1' }]
+        ], 2
+      )
+      %>
+      </div>
 
-   <div class="questions_item">
-      <%= f.label :rente_art, "Welche Art von Beschäftigungsverhältnis liegt vor?" %>
-      <%= f.select :rente_art, ["abhängig beschäftigt", "selbstständig"] %>
-    </div>
+      <div class="questions_item">
+          <%= f.label :rente_start, "In welchem Jahr haben Sie das erste Mal gearbeitet?" %>
+          <%= f.text_field :rente_start %>
+        </div>
 
-   <div class="questions_item">
-      <%= f.label :rente_start, "In welchem Jahr haben Sie das erste Mal gearbeitet?" %>
-      <%= f.text_field :rente_start %>
-    </div>
+      <div class="questions_item">
+          <%= f.label :rente_dauer, "Welches Geburtsjahr?" %>
+          <%= f.text_field :rente_dauer %>
+        </div>
 
-   <div class="questions_item">
-      <%= f.label :rente_dauer, "Welches Geburtsjahr?" %>
-      <%= f.text_field :rente_dauer %>
-    </div>
+      <div class="questions_item">
+          <%= f.label :rente_eink, "Wie hoch ist ihr Jahresbruttogehalt?" %>
+          <%= f.text_field :rente_eink %>
+        </div>
+      <%=  %>
 
-   <div class="questions_item">
-      <%= f.label :rente_eink, "Wie hoch ist ihr Jahresbruttogehalt?" %>
-      <%= f.text_field :rente_eink %>
-    </div>
+      <div class="questions_item">
+          <%= f.label :rente_reg, "Leben Sie in Ost- oder Westdeutschland?" %>
+          <%= f.select :rente_reg, f.options_for_select(
+        [
+          ['Ostdeutschland', 0, { 'data-size' => '31.89' }],
+          ['Westdeutschland', 1, { 'data-size' => '33.05' }]
+        ], 2
+      ) %>
+        </div>
 
-   <div class="questions_item">
-      <%= f.label :rente_reg, "Leben Sie in Ost- oder Westdeutschland?" %>
-      <%= f.select :rente_reg, ["Ostdeutschland", "Westdeutschland"] %>
-    </div>
+        <div class="questions_item">
+          <%= f.label :rente_kinder, "Wieviele Kinder haben Sie?" %>
+          <%= f.text_field :rente_kinder %>
+        </div>
 
-    <div class="questions_item">
-      <%= f.label :rente_kinder, "Wieviele Kinder haben Sie?" %>
-      <%= f.text_field :rente_kinder %>
-    </div>
+        <div class="questions_item">
+          <%= f.label :rente_kinder_gebjahr, "In welchem Jahr geboren?" %>
+          <%= f.text_field :rente_kinder_gebjahr %>
+        </div>
 
-    <div class="questions_item">
-      <%= f.label :rente_kinder_gebjahr, "In welchem Jahr geboren?" %>
-      <%= f.text_field :rente_kinder_gebjahr %>
-    </div>
+        <div class="questions_item">
+          <%= f.label :rente_betrieb, "Haben Sie sich für eine betriebliche Rente qualifiziert (z.B. VBL)?" %>
+          <%= f.select :rente_betrieb, f.options_for_select(
+              [
+                ['Nein', 0, { 'data-size' => '0' }],
+                ['Ja', 1, { 'data-size' => '1' }]
+              ], 2
+            )
+          %>
+        </div>
 
-    <div class="questions_item">
-      <%= f.label :rente_reg, "Haben Sie sich für eine betriebliche Rente qualifiziert (z.B. VBL)?" %>
-      <%= f.select :rente_reg, ["Ja", "Nein"] %>
-    </div>
+      <%= f.submit "Create" %>
 
-    <%= f.submit "Create" %>
+  <% end %>
+  </div>
 
-<% end %>
-</div>
+<!-- </dialog> -->
