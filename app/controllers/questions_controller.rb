@@ -6,9 +6,17 @@ class QuestionsController < ApplicationController
 
     def show
         @question = Question.find(params[:id])
-        hilfsvar1(@question.rente_estimate, @question.rente_art, @question.rente_start, @question.rente_dauer, @question.rente_eink, @question.rente_reg, @question.rente_kinder, @question.rente_kinder_gebjahr, @question.rente_betrieb)
-        hilfsvar2(@question.rente_estimate, @question.rente_art, @question.rente_start, @question.rente_dauer, @question.rente_eink, @question.rente_reg, @question.rente_kinder, @question.rente_kinder_gebjahr, @question.rente_betrieb)
-        hilfsvar3(@question.rente_estimate, @question.rente_art, @question.rente_start, @question.rente_dauer, @question.rente_eink, @question.rente_reg, @question.rente_kinder, @question.rente_kinder_gebjahr, @question.rente_betrieb)
+        @hilfsvar1 = hilfsvar1(@question.rente_start, @question.rente_kinder) #rente_vwerwerbsjahre
+        @hilfsvar2 = hilfsvar2(@question.rente_reg) #rente_vreg
+        @hilfsvar3 = hilfsvar3(@question.rente_eink) #rente_ventgeltpunkte
+        @hilfsvar4 = hilfsvar4(@question.rente_dauer) #rente_VBisZurRente
+        @hilfsvar5 = hilfsvar5(@question.rente_estimate, @hilfsvar1, @hilfsvar4, @hilfsvar2) #rente_vBenoetigt
+        @rente_heute = rente_heute(@hilfsvar3, @hilfsvar2, @hilfsvar1)
+        @rente_fiktiv = rente_fiktiv(@hilfsvar5, @hilfsvar2, @hilfsvar1)
+        @rente_notwendig = notwendiges_gehalt(@hilfsvar5, @question.rente_eink)
+        @rente_notwendigJahre = notwendige_jahre(@question.rente_estimate, @hilfsvar3, @hilfsvar2, @hilfsvar1, @hilfsvar5)
+        @rente_hochrechnung = hochrechnung(@rente_heute, @hilfsvar3, @hilfsvar2, @hilfsvar4)
+        @rente_hochrechnungMitAnpassung = hochrechnungMitAnpassung(@rente_heute, @hilfsvar3, @hilfsvar2,@question.rente_dauer,@hilfsvar4)
     end
 
     def rechner
