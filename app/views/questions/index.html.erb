@@ -1,6 +1,7 @@
-<h2>Index</h2>
+<%= render 'shared/title', title: "Index" %>
 
-<% @question.each do |question| %>
+
+<% @questions.each do |question| %>
 
     <ul>
         <li><%= question.rente_estimate %></li>

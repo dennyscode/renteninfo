@@ -1,0 +1,25 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    line-height: 2;
+}
+
+.form__item {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    border-bottom: .5px solid $main_col;
+    margin: .5 0;
+}
+
+.form__label {
+
+}
+
+.form__input {
+    margin-bottom: .5rem;
+    border: 1px solid $sub_col;
+    border-radius: .5rem;
+    min-height: 2rem;
+}

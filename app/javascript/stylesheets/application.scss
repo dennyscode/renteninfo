@@ -1,26 +1,29 @@
 //= require actiontext
-@import './settings/variables';
-@import './settings/breakpoints';
+
+// Variables:
+@import './vars/variables';
+
+// Mixins
 @import './mixins/mixins_breakpoints';
-@import './posts';
-@import './bootstrap_customs';
-@import './scaffolds';
-@import './welcome';
-@import './quiz';
-@import './styles';
-@import './nav';
-@import './trix.css';
+
+// Settings:
+@import './settings/breakpoints';
+@import './settings/main';
+
+// Components:
+@import './components/components';
+@import './components/form';
+
+// Vendors:
+@import './vendors/bootstrap_customs';
+@import './vendors/trix.css';
 @import './actiontext';
-@import './variables';
-@import './components';
+
+// Node-Modules:
 @import '~trix/dist/trix';
+@import '~tippy.js/dist/backdrop';
 // @import '~material-design-icons/iconfont/material-icons.css';
 
-
-* { box-sizing: border-box; };
-/* * { border: 1px solid red; } */
-
-body {
-    background-color: $background_col;
-    font-family: 'Raleway', sans-serif;
-}
+@import './modules/footer';
+@import './modules/nav';
+@import './modules/buttons';

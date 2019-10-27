@@ -5,6 +5,7 @@
 
 require("@rails/ujs").start()
 require("turbolinks").start()
+import tippy from 'tippy.js/dist/tippy-bundle.cjs';
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
@@ -21,17 +22,28 @@ require("@rails/actiontext")
 // require("@fortawesome/fontawesome-free/js/all")
 import 'trix';
 import 'trix/dist/trix.js';
+require("tippy.js/dist/tippy-bundle.iife.min.js");
+require("tippy.js/node_modules/popper.js/dist/popper.min.js")
+
+import axios from 'axios';
+require('axios');
+
+// import "tippy.js/dist/tippy-bundle.iife.min.js";
+//
 // import { Trix } from "trix";
 // require("@rails/actiontext")
 
+// tippy.tippy("h2", { content: "testen"});
 require.context('../images', true);
-
 
 let works;
 // require('../javascript/javascript.js.erb');
 require('../javascript/questions.js');
 require('../javascript/tool.js');
 require('../javascript/javascript.js');
+require('../packs/rechner.js');
+
+
 
 // import * as tool from '../javascript/tool.js';
 // console.log(tool)
@@ -43,5 +55,4 @@ import '../stylesheets/application.scss';
 document.addEventListener("turbolinks:load", () => {
     console.log('Hello World from Webpacker');
     document.querySelector(".nav_container").setAttribute("show", "true");
-
 });

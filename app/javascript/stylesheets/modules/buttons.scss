@@ -1,0 +1,13 @@
+.button {
+    background-color: $sub_col;
+    color: $main_col;
+    font-size: 1rem;
+    border: 2px solid $sub_col;
+    border-radius: .5rem;
+    margin: 2rem 0 1rem 0;
+}
+
+.button:hover {
+    background-color: $main_col;
+    color: $sub_col;
+}

@@ -20,11 +20,25 @@ class QuestionsController < ApplicationController
     end
 
     def rechner
+        @question = Question.new
+
+        if @question.save
+            # format.html { redirect_to @questions_path, notice: 'Review was created successfully.' }
+            # format.json { render :show, status: :created, location: @question }
+            # format.js
+          else
+            format.html { redirect_to @question, alert: 'Review was not saved successfully.' }
+            format.json { render json: @comment.errors, status: :unprocessable_entity }
+          end
+
+    end
+
+    def calc
+
 
     end
 
     def create
-
         # byebug
         @questions = Question.new(questions_params)
         if @questions.save
