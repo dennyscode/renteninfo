@@ -1,0 +1,2 @@
+class Rentenrechner < ApplicationRecord
+end
