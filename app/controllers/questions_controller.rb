@@ -6,39 +6,26 @@ class QuestionsController < ApplicationController
 
     def show
         @question = Question.find(params[:id])
+        durchschnittsentgeltRV_2019 = 38901
         @hilfsvar1 = hilfsvar1(@question.rente_start, @question.rente_kinder) #rente_vwerwerbsjahre
         @hilfsvar2 = hilfsvar2(@question.rente_reg) #rente_vreg
-        @hilfsvar3 = hilfsvar3(@question.rente_eink) #rente_ventgeltpunkte
+        @hilfsvar3 = hilfsvar3(@question.rente_eink, durchschnittsentgeltRV_2019) #rente_ventgeltpunkte
         @hilfsvar4 = hilfsvar4(@question.rente_dauer) #rente_VBisZurRente
         @hilfsvar5 = hilfsvar5(@question.rente_estimate, @hilfsvar1, @hilfsvar4, @hilfsvar2) #rente_vBenoetigt
         @rente_heute = rente_heute(@hilfsvar3, @hilfsvar2, @hilfsvar1)
         @rente_fiktiv = rente_fiktiv(@hilfsvar5, @hilfsvar2, @hilfsvar1)
         @rente_notwendig = notwendiges_gehalt(@hilfsvar5, @question.rente_eink)
-        @rente_notwendigJahre = notwendige_jahre(@question.rente_estimate, @hilfsvar3, @hilfsvar2, @hilfsvar1, @hilfsvar5)
+        @rente_notwendigJahre = notwendige_jahre(@question.rente_estimate, @hilfsvar3, @hilfsvar2, @hilfsvar1, @hilfsvar5, durchschnittsentgeltRV_2019)
         @rente_hochrechnung = hochrechnung(@rente_heute, @hilfsvar3, @hilfsvar2, @hilfsvar4)
         @rente_hochrechnungMitAnpassung = hochrechnungMitAnpassung(@rente_heute, @hilfsvar3, @hilfsvar2,@question.rente_dauer,@hilfsvar4)
     end
 
     def rechner
         @question = Question.new
-
-        if @question.save
-            # format.html { redirect_to @questions_path, notice: 'Review was created successfully.' }
-            # format.json { render :show, status: :created, location: @question }
-            # format.js
-          else
-            format.html { redirect_to @question, alert: 'Review was not saved successfully.' }
-            format.json { render json: @comment.errors, status: :unprocessable_entity }
-          end
-
-    end
-
-    def calc
-
-
     end
 
     def create
+
         # byebug
         @questions = Question.new(questions_params)
         if @questions.save

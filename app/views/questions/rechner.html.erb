@@ -1,6 +1,6 @@
 <%= render 'shared/title', title: "Rechner" %>
 
-<%= form_for(@question, remote: true, class: "form") do |f| %>
+<%= form_with(model: @question, url: questions_path(@question), class: "form") do |f| %>
   <div class="form__item">
     <%= f.label :rente_estimate, "Wie hoch schätzen Sie Ihren monatlichen Bedarf als Rentner/in (Wohnungskosten, Versorgung, etc.)?", :class=> "form__label" %>
     <%= f.text_field :rente_estimate, :class=> "form__input" %>

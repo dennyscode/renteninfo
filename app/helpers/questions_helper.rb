@@ -4,6 +4,8 @@ module QuestionsHelper
         puts "huhu"
     end
 
+
+
     # puts "#{rente_estimate}, #{rente_art}, #{rente_start}, #{rente_dauer}, #{rente_eink}, #{rente_reg}, #{rente_kinder}, #{rente_kinder_gebjahr}, #{rente_betrieb}"
 
     def hilfsvar1(rente_start, rente_kinder)
@@ -24,8 +26,8 @@ module QuestionsHelper
         return rente_vreg
     end
 
-    def hilfsvar3(rente_eink)
-        rente_ventgeltpunkte = (rente_eink.to_i*100/rente_eink.to_i)*0.01
+    def hilfsvar3(rente_eink, durchschnittsentgeltRV)
+        rente_ventgeltpunkte = (rente_eink.to_i*100/durchschnittsentgeltRV)*0.01
         puts "Hilfsvariable 3) #{rente_ventgeltpunkte}"
         return rente_ventgeltpunkte
     end
@@ -56,8 +58,8 @@ module QuestionsHelper
         return rente_notwendig
     end
 
-    def notwendige_jahre(rente_estimate, rente_ventgeltpunkte, rente_vreg, rente_vwerwerbsjahre, rente_vBisZurRente)
-        rente_notwendigJahre = (rente_estimate.to_i/rente_ventgeltpunkte.to_i*rente_vreg.to_i)-(rente_vwerwerbsjahre.to_i + rente_vBisZurRente.to_i)
+    def notwendige_jahre(rente_estimate, rente_ventgeltpunkte, rente_vreg, rente_vwerwerbsjahre, rente_vBisZurRente, durchschnittsentgeltRV)
+        rente_notwendigJahre = (rente_estimate.to_i/durchschnittsentgeltRV.to_i*rente_vreg.to_i)-(rente_vwerwerbsjahre.to_i + rente_vBisZurRente.to_i)
         return rente_notwendigJahre
     end
 

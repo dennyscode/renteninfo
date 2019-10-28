@@ -28,6 +28,11 @@ require("tippy.js/node_modules/popper.js/dist/popper.min.js")
 import axios from 'axios';
 require('axios');
 
+// https://www.aktuar-hoffmann.de/_durchschnittsentgelt_rentenversicherung.html
+axios.get("https://jsonplaceholder.typicode.com/users").then(res => {
+    console.log(res)
+})
+
 // import "tippy.js/dist/tippy-bundle.iife.min.js";
 //
 // import { Trix } from "trix";
