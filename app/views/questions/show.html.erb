@@ -3,16 +3,16 @@
 <h2 class="tooltippy" data-tippy-content="Tooltip">Show</h2>
 
     <ul>
-        <li>test</li>
-        <li><%= @question.rente_estimate %></li>
-        <li><%= @question.rente_art %></li>
-        <li><%= @question.rente_start %></li>
-        <li><%= @question.rente_dauer %></li>
-        <li><%= @question.rente_eink %></li>
-        <li><%= @question.rente_reg %></li>
-        <li><%= @question.rente_kinder %></li>
-        <li><%= @question.rente_kinder_gebjahr %></li>
-        <li><%= @question.rente_betrieb %></li>
+        <li>Durchschnittsentgeld (<%= Time.now.year %>):<%= @durchschnittsentgeltRV_2019 %></li>
+        <li>Estimate:<%= @question.rente_estimate %></li>
+        <li>Art:<%= @question.rente_art %></li>
+        <li>Start:<%= @question.rente_start %></li>
+        <li>Dauer:<%= @question.rente_dauer %></li>
+        <li>Eink:<%= @question.rente_eink %></li>
+        <li>Reg:<%= @question.rente_reg %></li>
+        <li>Kinder:<%= @question.rente_kinder %></li>
+        <li>Kinder_Gebjahr:<%= @question.rente_kinder_gebjahr %></li>
+        <li>Betrieb:<%= @question.rente_betrieb %></li>
     </ul>
 
 <p>Hilfsvariable 1: <%= @hilfsvar1 %>  (rente_vwerwerbsjahre)</p>

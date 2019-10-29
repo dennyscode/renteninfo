@@ -6,16 +6,16 @@ class QuestionsController < ApplicationController
 
     def show
         @question = Question.find(params[:id])
-        durchschnittsentgeltRV_2019 = 38901
+        @durchschnittsentgeltRV_2019 = 38901
         @hilfsvar1 = hilfsvar1(@question.rente_start, @question.rente_kinder) #rente_vwerwerbsjahre
         @hilfsvar2 = hilfsvar2(@question.rente_reg) #rente_vreg
-        @hilfsvar3 = hilfsvar3(@question.rente_eink, durchschnittsentgeltRV_2019) #rente_ventgeltpunkte
+        @hilfsvar3 = hilfsvar3(@question.rente_eink, @durchschnittsentgeltRV_2019) #rente_ventgeltpunkte
         @hilfsvar4 = hilfsvar4(@question.rente_dauer) #rente_VBisZurRente
         @hilfsvar5 = hilfsvar5(@question.rente_estimate, @hilfsvar1, @hilfsvar4, @hilfsvar2) #rente_vBenoetigt
         @rente_heute = rente_heute(@hilfsvar3, @hilfsvar2, @hilfsvar1)
         @rente_fiktiv = rente_fiktiv(@hilfsvar5, @hilfsvar2, @hilfsvar1)
         @rente_notwendig = notwendiges_gehalt(@hilfsvar5, @question.rente_eink)
-        @rente_notwendigJahre = notwendige_jahre(@question.rente_estimate, @hilfsvar3, @hilfsvar2, @hilfsvar1, @hilfsvar5, durchschnittsentgeltRV_2019)
+        @rente_notwendigJahre = notwendige_jahre(@question.rente_estimate, @hilfsvar3, @hilfsvar2, @hilfsvar1, @hilfsvar5, @durchschnittsentgeltRV_2019)
         @rente_hochrechnung = hochrechnung(@rente_heute, @hilfsvar3, @hilfsvar2, @hilfsvar4)
         @rente_hochrechnungMitAnpassung = hochrechnungMitAnpassung(@rente_heute, @hilfsvar3, @hilfsvar2,@question.rente_dauer,@hilfsvar4)
     end
@@ -48,6 +48,6 @@ class QuestionsController < ApplicationController
 
     private
         def questions_params
-            params.permit(:rente_estimate, :rente_art, :rente_start, :rente_dauer, :rente_eink, :rente_reg, :rente_kinder, :rente_kinder_gebjahr, :rente_betrieb)
+            params.require(:question).permit(:rente_estimate, :rente_art, :rente_start, :rente_dauer, :rente_eink, :rente_reg, :rente_kinder, :rente_kinder_gebjahr, :rente_betrieb)
         end
 end
