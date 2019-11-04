@@ -59,5 +59,17 @@ import '../stylesheets/application.scss';
 
 document.addEventListener("turbolinks:load", () => {
     console.log('Hello World from Webpacker');
+
+    // this is the eventlistener for the slider rente_estimate
+    document.querySelector("#slider_r_estimate").addEventListener("input", function() {document.querySelector("#rente_estimate_input").value = document.querySelector("#slider_r_estimate").value})
+
     document.querySelector(".nav_container").setAttribute("show", "true");
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value; // Display the default slider value
+    
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
 });

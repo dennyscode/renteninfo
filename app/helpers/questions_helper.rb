@@ -27,24 +27,24 @@ module QuestionsHelper
     end
 
     def hilfsvar3(rente_eink, durchschnittsentgeltRV)
-        rente_ventgeltpunkte = (rente_eink.to_i*100/durchschnittsentgeltRV)*0.01
+        rente_ventgeltpunkte = rente_eink.to_i/durchschnittsentgeltRV
         puts "Hilfsvariable 3) #{rente_ventgeltpunkte}"
         return rente_ventgeltpunkte
     end
 
     def hilfsvar4(rente_dauer)
         rente_dauer = rente_dauer.to_i
-        rente_vBisZurRente = (rente_dauer + 67) - (Time.now.year.to_i - 1)
+        rente_vBisZurRente = 67 - (Time.now.year.to_i + 1 - rente_dauer)
         return rente_vBisZurRente
     end
 
     def hilfsvar5(rente_estimate, rente_vwerwerbsjahre, rente_vBisZurRente, rente_vreg)
-        rente_vBenoetigt = rente_estimate.to_i / rente_vwerwerbsjahre.to_i + rente_vBisZurRente.to_i * rente_vreg.to_i
+        rente_vBenoetigt = rente_estimate.to_i / ((rente_vwerwerbsjahre.to_i + rente_vBisZurRente.to_i) * rente_vreg.to_i)
         return rente_vBenoetigt
     end
 
     def rente_heute(rente_ventgeltpunkte, rente_vreg, rente_vwerwerbsjahre)
-        rente_vHeute = rente_ventgeltpunkte * rente_vreg * rente_vwerwerbsjahre
+        rente_vHeute = rente_vBenoetigt * rente_vreg * rente_vwerwerbsjahre
         return rente_vHeute
     end
 
@@ -54,12 +54,12 @@ module QuestionsHelper
     end
 
     def notwendiges_gehalt(rente_vBenoetigt, rente_eink)
-        rente_notwendig = ((rente_vBenoetigt.to_i*100)*rente_eink.to_i)/100
+        rente_notwendig = durchschnittsentgeltRV.to_i * rente_vBenoetigt.to_i
         return rente_notwendig
     end
 
     def notwendige_jahre(rente_estimate, rente_ventgeltpunkte, rente_vreg, rente_vwerwerbsjahre, rente_vBisZurRente, durchschnittsentgeltRV)
-        rente_notwendigJahre = (rente_estimate.to_i/durchschnittsentgeltRV.to_i*rente_vreg.to_i)-(rente_vwerwerbsjahre.to_i + rente_vBisZurRente.to_i)
+        rente_notwendigJahre = rente_estimate.to_i / (durchschnittsentgeltRV.to_i * rente_vreg.to_i)
         return rente_notwendigJahre
     end
 

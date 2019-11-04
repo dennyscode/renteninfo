@@ -1,0 +1,1 @@
+document.querySelector("#slider_r_estimate").addEventListener("input", function() {document.querySelector("#rente_estimate_num").textContent = document.querySelector("#slider_r_estimate").value})
