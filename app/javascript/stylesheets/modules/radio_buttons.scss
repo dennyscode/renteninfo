@@ -4,23 +4,36 @@
 //     -ms-appearance: checkbox;     /* not currently supported */
 //   }
 
-  .checkbox__label {
-    margin: 0 1em;
-  }
+.form__input[type="text"] {
+  border: 1px solid #eee;
+  border-radius: .2em;
+}
+.form__input[type="text"]:hover {
+  border: 2px solid #eee;
 
-  .radiobutton__input {
-    display: none;
-  }
+}
 
-  .checkbox__click {
-    position: absolute;
-    margin-left: 5px;
-    width: 25px;
-    height: 25px;
-    background-color: #eee;
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: background-color .2s;
-  }
+.form__input[type="text"]:focus {
+  border: 2px solid #ccc;
+  outline-color:#ccc;
+}
+.checkbox__label {
+  margin: 0 1em;
+}
+
+.radiobutton__input {
+  display: none;
+}
+
+.checkbox__click {
+  position: absolute;
+  margin-left: 5px;
+  width: 25px;
+  height: 25px;
+  background-color: #eee;
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: background-color .2s;
+}
 
 .checkbox__tick {
   display: none;
@@ -31,26 +44,26 @@ input:checked + .checkbox__click {
 }
 
 
-  input:checked + .checkbox__click .checkbox__tick {
-    position: absolute;
-    display: inline;
-    left: 7.5px;
-    height: 20px;
-    width: 10px;
-    border-bottom: 3px solid white;
-    border-right: 3px solid white;
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: display .2s;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);  }
+input:checked + .checkbox__click .checkbox__tick {
+  position: absolute;
+  display: inline;
+  left: 7.5px;
+  height: 20px;
+  width: 10px;
+  border-bottom: 3px solid white;
+  border-right: 3px solid white;
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: display .2s;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);  }
 
 .checkbox__label:hover .checkbox__click {
   background-color: #ccc;
 }
 
- .checkbox__click ~ input:checked  {
-      background-color: "#2196F3";
-    }
+.checkbox__click ~ input:checked  {
+  background-color: "#2196F3";
+}
 
 // Inspired by Source: https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
