@@ -12,9 +12,9 @@ class QuestionsController < ApplicationController
         @hilfsvar3 = hilfsvar3(@question.rente_eink, @durchschnittsentgeltRV_2019) #rente_ventgeltpunkte
         @hilfsvar4 = hilfsvar4(@question.rente_dauer) #rente_VBisZurRente
         @hilfsvar5 = hilfsvar5(@question.rente_estimate, @hilfsvar1, @hilfsvar4, @hilfsvar2) #rente_vBenoetigt
-        @rente_heute = rente_heute(@hilfsvar3, @hilfsvar2, @hilfsvar1)
+        @rente_heute = rente_heute(@hilfsvar2, @hilfsvar1, @hilfsvar5)
         @rente_fiktiv = rente_fiktiv(@hilfsvar5, @hilfsvar2, @hilfsvar1)
-        @rente_notwendig = notwendiges_gehalt(@hilfsvar5, @question.rente_eink)
+        @rente_notwendig = notwendiges_gehalt(@hilfsvar5, @durchschnittsentgeltRV_2019)
         @rente_notwendigJahre = notwendige_jahre(@question.rente_estimate, @hilfsvar3, @hilfsvar2, @hilfsvar1, @hilfsvar5, @durchschnittsentgeltRV_2019)
         @rente_hochrechnung = hochrechnung(@rente_heute, @hilfsvar3, @hilfsvar2, @hilfsvar4)
         @rente_hochrechnungMitAnpassung = hochrechnungMitAnpassung(@rente_heute, @hilfsvar3, @hilfsvar2,@question.rente_dauer,@hilfsvar4)

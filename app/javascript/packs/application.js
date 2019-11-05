@@ -62,6 +62,9 @@ document.addEventListener("turbolinks:load", () => {
 
     // this is the eventlistener for the slider rente_estimate
     document.querySelector("#slider_r_estimate").addEventListener("input", function() {document.querySelector("#rente_estimate_input").value = document.querySelector("#slider_r_estimate").value})
+    // this is the eventlistener for the checkboxes
+    document.querySelectorAll(".checkbox__label").forEach(function(element) { element.addEventListener("click", function() {console.log(this.children[0].checked= "true")}); })
+
 
     document.querySelector(".nav_container").setAttribute("show", "true");
     var slider = document.getElementById("myRange");

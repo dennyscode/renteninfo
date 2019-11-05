@@ -43,7 +43,7 @@ module QuestionsHelper
         return rente_vBenoetigt
     end
 
-    def rente_heute(rente_ventgeltpunkte, rente_vreg, rente_vwerwerbsjahre)
+    def rente_heute(rente_vreg, rente_vwerwerbsjahre, rente_vBenoetigt)
         rente_vHeute = rente_vBenoetigt * rente_vreg * rente_vwerwerbsjahre
         return rente_vHeute
     end
@@ -53,7 +53,7 @@ module QuestionsHelper
         return rente_fiktiv
     end
 
-    def notwendiges_gehalt(rente_vBenoetigt, rente_eink)
+    def notwendiges_gehalt(rente_vBenoetigt, durchschnittsentgeltRV)
         rente_notwendig = durchschnittsentgeltRV.to_i * rente_vBenoetigt.to_i
         return rente_notwendig
     end

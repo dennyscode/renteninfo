@@ -8,23 +8,23 @@
   </div>
 
 
-     <%= f.label :rente_art, "abhängig beschäftigt", :value => "0" do %>abhängig beschäftigt
-        <%= f.radio_button :rente_art, "abhängig beschäftigt", :checked => true, :class => "radiobutton__input" %>
-        <span class="checkmark"></span>
-      <% end %>
-      <%= f.label :rente_art, "selbstständig", :value => "1" do %>selbstständig
-        <%= f.radio_button :rente_art, "selbstständig", :checked => false, :class => "radiobutton__input" %>
-      <% end %>
 
   <div class="form__item">
-    <%= f.label :rente_art, "Welche Art von Beschäftigungsverhältnis liegt vor?", :class=> "form__label" %>
-    <%= f.select :rente_art, f.options_for_select(
-    [
-      ['abhängig beschäftigt', 0, { 'data-size' => '0' }],
-      ['selbstständig', 1, { 'data-size' => '1' }]
-    ], 2
-  ), {}, { :class=> "form__input"}
-  %>
+    <p class="form__label">Welche Art von Beschäftigungsverhältnis liegt vor?</p>
+    <div class="form__input">
+      <%= f.label :rente_art, "abhängig beschäftigt", :value => "0", :class=> "checkbox__label" do %>abhängig beschäftigt
+          <%= f.radio_button :rente_art, "abhängig beschäftigt", :checked => true, :class => "radiobutton__input" %>
+          <span class="checkbox__click">
+            <span class="checkbox__tick"></span>
+          </span>
+        <% end %>
+        <%= f.label :rente_art, "selbstständig", :value => "1", :class=> "checkbox__label" do %>selbstständig
+          <%= f.radio_button :rente_art, "selbstständig", :checked => false, :class => "radiobutton__input" %>
+          <span class="checkbox__click">
+            <span class="checkbox__tick"></span>
+          </span>
+        <% end %>
+      </div>
   </div>
 
   <div class="form__item">
@@ -80,13 +80,3 @@
   <% end %>
 
 <!-- </dialog> -->
-
-
-
-<div class="testBut">TestBut</div>
-
-
-<div class="slidecontainer">
-  <p id="demo"></p>
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-</div>
