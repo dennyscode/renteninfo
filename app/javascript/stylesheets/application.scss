@@ -24,6 +24,10 @@
 @import '~tippy.js/dist/backdrop';
 // @import '~material-design-icons/iconfont/material-icons.css';
 
+// Elements:
+@import './elements/hr';
+
+// Modules:
 @import './modules/footer';
 @import './modules/nav';
 @import './modules/buttons';

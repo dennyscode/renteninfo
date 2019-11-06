@@ -62,6 +62,7 @@ nav {
 }
 
 .nav_container[show="true"] {
+    align-items: last baseline;
     animation-name: example;
     animation-duration: .5s;
     display: flex;

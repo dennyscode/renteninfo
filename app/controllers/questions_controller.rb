@@ -7,6 +7,7 @@ class QuestionsController < ApplicationController
     def show
         @question = Question.find(params[:id])
         @durchschnittsentgeltRV_2019 = 38901
+        puts "#{@durchschnittsentgeltRV_2019} -- !!"
         @hilfsvar1 = hilfsvar1(@question.rente_start, @question.rente_kinder) #rente_vwerwerbsjahre
         @hilfsvar2 = hilfsvar2(@question.rente_reg) #rente_vreg
         @hilfsvar3 = hilfsvar3(@question.rente_eink, @durchschnittsentgeltRV_2019) #rente_ventgeltpunkte
