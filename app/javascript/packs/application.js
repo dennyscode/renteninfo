@@ -67,8 +67,10 @@ document.addEventListener("turbolinks:load", () => {
 
       for (let f = 0; f<input; f++) {
         let d = document.createElement("input");
+        console.log(f);
         d.setAttribute("class", "form__input");
         d.setAttribute("type", "text");
+        d.setAttribute("placeholder", f + ". Kind");
         c.appendChild(d)
       }
     }
