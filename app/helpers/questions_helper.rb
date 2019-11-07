@@ -17,7 +17,7 @@ module QuestionsHelper
     def hilfsvar2(rente_reg)
         rente_reg = rente_reg.to_f,
 
-        if (rente_reg == 0)
+        if (rente_reg == 0 || rente_reg == 31.89)
             rente_vreg = 31.89
         else
             rente_vreg = 33.05
