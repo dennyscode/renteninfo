@@ -66,18 +66,22 @@ document.addEventListener("turbolinks:load", () => {
       c.innerHTML = "";
 
       for (let f = 0; f<input; f++) {
-        let d = document.createElement("input");
-        console.log(f);
-        d.setAttribute("class", "form__input");
-        d.setAttribute("type", "text");
-        d.setAttribute("placeholder", f + ". Kind");
-        c.appendChild(d)
+        let c = document.querySelector("#rente_kinderlist");
+        let f = document.createElement("input");
+        f.setAttribute("class", "form__input");
+        f.setAttribute("multiple", "multiple");
+        f.setAttribute("placeholder", f + ". Kind");
+        f.setAttribute("type", "text");
+        f.setAttribute("value", input);
+        f.setAttribute("name", 'question[rente_kinder_gebjahr][]');
+        c.appendChild(f);
       }
     }
 
     // this is the eventlistener for the slider rente_estimate
     document.querySelector("#slider_r_estimate").addEventListener("input", function() {document.querySelector("#rente_estimate_input").value = document.querySelector("#slider_r_estimate").value})
     document.querySelector("#slider_r_kinder").addEventListener("input", function() {document.querySelector("#question_rente_kinder").value = this.value;createTextfields(this.value)})
+    document.querySelector("#question_rente_kinder").addEventListener("input", function() {document.querySelector("#question_rente_kinder").value = this.value;createTextfields(this.value)})
 
     // this is the eventlistener for the checkboxes
     document.querySelectorAll(".checkbox__label").forEach(function(element) { element.addEventListener("click", function() {this.children[0].checked= "true"}); })
@@ -85,8 +89,8 @@ document.addEventListener("turbolinks:load", () => {
 
     // eventlistener for rechner tool:
     // Haben Sie Kinder? Radiobutton -->
-    document.querySelector("#rente_kinder__nachwuchs_nein").addEventListener("click", function() {document.querySelector("#question_rente_kinder").value="0"})
-    document.querySelector("#rente_kinder__nachwuchs_ja").addEventListener("click", function() {document.querySelector("#question_rente_kinder").value="1";document.querySelector("#rente__kinder").style.display ="flex";document.querySelector("#rente__kinder_gebjahr").style.display ="flex"})
+    document.querySelector("#rente_kinder__nachwuchs_nein").parentElement.addEventListener("click", function() {document.querySelector("#question_rente_kinder").value="0"})
+    document.querySelector("#rente_kinder__nachwuchs_ja").parentElement.addEventListener("click", function() {document.querySelector("#question_rente_kinder").value="1";document.querySelector("#rente__kinder").style.display ="flex";document.querySelector("#rente__kinder_gebjahr").style.display ="flex"})
 
 
 
