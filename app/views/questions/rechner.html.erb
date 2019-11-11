@@ -79,13 +79,44 @@
   </div>
 </div>
 
+  <hr class="break">
+  <div class="form__item" id="rente_jobs">
+    <hr class="break">
+    <%= f.label :rente_jobs, "Für die Genauigkeit der Rentenberechnung ist es hilfreich Ihre Erwerbshistorie nachzuzeichnen. 	Bitte füllen Sie aus wie lange Sie zu welchen Bedingungen gearbeitet haben.", :class=> "form__label" %>
+    <div class="form__box" id="rente__jobs">
+      <div class="form__grid">
+        <% 2.times do |g|%>
+          <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Beginn#{g}", name: "question[rente_jobs][beginn][]" %>
+          <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Ende#{g}", name: "question[rente_jobs][ende][]" %>
+          <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Art (Minijob, Teilzeit, Vollzeit)#{g}", name: "question[rente_jobs][art][]" %>
+          <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Monatsbruttogehalt#{g}", name: "question[rente_jobs][brutto][]" %>
+        <% end %>
+      </div>
+    </div>
+  </div> 
+
+  <%
+=begin%>
+ <%= f.fields_for :rente_jobs do |ff| %>
+  <div>
+    <%= ff.label :beginn %>
+    <%= ff.text_field :beginn %>
+    <%= ff.label :ende %>
+    <%= ff.text_field :ende %>
+    <%= ff.label :art %>
+    <%= ff.text_field :art %>
+    <%= ff.label :brutto %>
+    <%= ff.text_field :brutto %>
+  </div>
+<% end %> 
+<%
+=end%>
 
   <hr class="break">
-
-  <div class="form__item">
-    <%= f.label :rente_dauer, "Welches Geburtsjahr?", :class=> "form__label" %>
-    <%= f.text_field :rente_dauer, :class=> "form__input" %>
-  </div>
+    <div class="form__item">
+      <%= f.label :rente_dauer, "Welches Geburtsjahr?", :class=> "form__label" %>
+      <%= f.text_field :rente_dauer, :class=> "form__input" %>
+    </div>
 
   <hr class="break">
 
@@ -136,6 +167,7 @@
 </div>
 
 
+
   <div class="form__item" id="rente__kinder">
     <hr class="break">
     <%= f.label :rente_kinder, "Wie viele Kinder haben Sie?", :class=> "form__label" %>
@@ -156,7 +188,7 @@
     <hr class="break">
     <%= f.label :rente_kinder_gebjahr, "In welchem Jahr geboren?", :class=> "form__label" %>
     <div class="form__box" id="rente_kinderlist">
-      <%= f.text_field :rente_kinder_gebjahr, multiple: true, :class=> "form__input", :placeholder => "1. Kind" %>
+    <%= f.text_field :rente_kinder_gebjahr, multiple: true, :class=> "form__input", :placeholder => "1. Kind" %>
     </div>
   </div>
 

@@ -49,7 +49,8 @@ class QuestionsController < ApplicationController
 
     private
         def questions_params
-            params.require(:question).permit(:rente_estimate, :rente_art,:rente_zusatz, :rente_start,  :rente_dauer, :rente_eink, :rente_reg, :rente_kinder, :rente_betrieb, :rente_wunschalter, :rente_kinder_gebjahr => [], :rente_kinder_ges => [])
+            params.require(:question).permit(:rente_estimate, :rente_art,:rente_zusatz, :rente_start,  :rente_dauer, :rente_eink, :rente_reg, :rente_kinder, :rente_betrieb, :rente_wunschalter, :rente_kinder_gebjahr => [], :rente_jobs => [:beginn, :ende, :art, :brutto])
+            # params.permit(:beginn, :ende, :art, :brutto)
             # params.require(:question).permit(:rente_kinder_ges, rente_kinder_ges: [])
         end
 end

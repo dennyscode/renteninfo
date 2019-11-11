@@ -7,6 +7,7 @@
         <li>Estimate:<%= @question.rente_estimate %></li>
         <li>Art:<%= @question.rente_art %></li>
         <li>Start:<%= @question.rente_start %></li>
+        <li>Jobs:<%= @question.rente_jobs %></li>
         <li>Dauer:<%= @question.rente_dauer %></li>
         <li>Eink:<%= @question.rente_eink %></li>
         <li>Reg:<%= @question.rente_reg %></li>
@@ -14,6 +15,10 @@
         <li>Kinder_Gebjahr:<%= @question.rente_kinder_gebjahr %></li>
         <li>Betrieb:<%= @question.rente_betrieb %></li>
         <li>Wunschalter:<%= @question.rente_wunschalter %></li>
+        <hr>
+        <li>Beginn:<%= @question.rente_jobs[0] %></li>
+
+        <hr>
     </ul>
 
 <p>Hilfsvariable 1: <%= @hilfsvar1 %>  (rente_vwerwerbsjahre)</p>
