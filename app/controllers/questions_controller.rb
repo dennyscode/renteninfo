@@ -6,6 +6,10 @@ class QuestionsController < ApplicationController
 
     def show
         @question = Question.find(params[:id])
+        testvar = params[:rente_jobs]
+        puts "#{testvar}"
+        testvar2 = params[:photos]
+        puts "#{testvar2}"
         @durchschnittsentgeltRV_2019 = 38901
         puts "#{@durchschnittsentgeltRV_2019} -- !!"
         @hilfsvar1 = hilfsvar1(@question.rente_start, @question.rente_kinder) #rente_vwerwerbsjahre
@@ -26,15 +30,23 @@ class QuestionsController < ApplicationController
     end
 
     def create
-
-        # byebug
+        testvar = params[:rente_jobs]
+        puts "#{testvar}"
+        temparray = []
+        params[:rente_jobs].values.each.with_index do |val, index|
+            puts "test #{index}, #{val}"
+            temparray << ["#{val["beginn"]}, #{val["ende"]}, #{val["art"]}, #{val["brutto"]}"]
+        end
         @questions = Question.new(questions_params)
+        @questions.rente_jobs = temparray
         if @questions.save
             flash[:success] = "Questions were okay"
             redirect_to question_url(@questions)
         else
             render 'rechner'
         end
+        byebug
+
     end
 
     def new
@@ -49,7 +61,29 @@ class QuestionsController < ApplicationController
 
     private
         def questions_params
-            params.require(:question).permit(:rente_estimate, :rente_art,:rente_zusatz, :rente_start,  :rente_dauer, :rente_eink, :rente_reg, :rente_kinder, :rente_betrieb, :rente_wunschalter, :rente_kinder_gebjahr => [], :rente_jobs => [:beginn, :ende, :art, :brutto])
+            params.require(:question).permit(
+                :rente_estimate, 
+                :rente_art,
+                :rente_zusatz, 
+                :rente_start,  
+                :rente_dauer, 
+                :rente_eink, 
+                :rente_reg, 
+                :rente_kinder, 
+                :rente_betrieb, 
+                :rente_wunschalter, 
+                :rente_jobs => [
+                    :start => [],
+                    :ende => [],
+                    :art => [],
+                    :brutto => [],
+                ], 
+                :rente_kinder_gebjahr => [],
+                photos: {
+                    photo: {
+                    }
+                }
+            )
             # params.permit(:beginn, :ende, :art, :brutto)
             # params.require(:question).permit(:rente_kinder_ges, rente_kinder_ges: [])
         end

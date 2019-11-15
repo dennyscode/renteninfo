@@ -23,7 +23,6 @@ require("@rails/actiontext")
 import 'trix';
 import 'trix/dist/trix.js';
 require("tippy.js/dist/tippy-bundle.iife.min.js");
-require("tippy.js/node_modules/popper.js/dist/popper.min.js")
 
 import axios from 'axios';
 require('axios');
