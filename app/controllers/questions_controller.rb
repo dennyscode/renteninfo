@@ -45,8 +45,7 @@ class QuestionsController < ApplicationController
         else
             render 'rechner'
         end
-        byebug
-
+        # byebug
     end
 
     def new
