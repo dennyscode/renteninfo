@@ -1,0 +1,52 @@
+.icon {
+    color: $sub_col;
+    // width: 6rem;
+    border-radius: 50%;
+    border: .1rem solid #fff;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.button:hover .icon, .button:hover .icon .icon__delete:before, .button:hover .icon .icon__delete:after{
+    border-color: #fff;
+}
+.button:hover .icon .icon__delete:before, .button:hover .icon .icon__delete:after{
+
+}
+
+// sizes
+.icon__small {
+    width: 50px;
+    height: 50px;
+}
+
+.icon__large {
+    width: 6rem;
+}
+
+
+// icon symbols
+
+.icon__delete {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.icon__delete:before, .icon__delete:after {
+    position: absolute;
+    content: ' ';
+    height: 40px;
+    top: 4px;
+    left: 22.5px;
+    width: 2px;
+    background-color: #fff;
+  }
+  .icon__delete:before {
+    transform: rotate(45deg);
+  }
+  .icon__delete:after {
+    transform: rotate(-45deg);
+  }
+

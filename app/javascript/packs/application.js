@@ -83,6 +83,17 @@ document.addEventListener("turbolinks:load", () => {
       }
     }
 
+    function setNames(input) {
+      console.log(input);
+      let counter = input.length;
+      for (let f = 0; f < counter; f++) {
+        input[f].children[0].setAttribute("name", "rente_jobs[" + f + "][beginn]");
+        input[f].children[1].setAttribute("name", "rente_jobs[" + f + "][ende]");
+        input[f].children[2].setAttribute("name", "rente_jobs[" + f + "][art]");
+        input[f].children[3].setAttribute("name", "rente_jobs[" + f + "][brutto]");
+      }
+    }
+
     function checkboxEventAdder () {
       let counter
       let _counter
@@ -114,6 +125,8 @@ document.addEventListener("turbolinks:load", () => {
         let f = document.createElement("input");
         f.setAttribute("class", "form__input");
         f.setAttribute("multiple", "multiple");
+        f.setAttribute("type", "text");
+
         if (i==0) {
           f.setAttribute("placeholder", "Beginn");
           f.setAttribute("name", "rente_jobs[" + elements + "][beginn]");
@@ -130,13 +143,35 @@ document.addEventListener("turbolinks:load", () => {
           f.setAttribute("placeholder", "Brutto");
           f.setAttribute("name", "rente_jobs[" + elements + "][brutto]");
         }
-        f.setAttribute("type", "text");
         d.appendChild(f)
+        if (i==3) {
+          let remove_button = document.createElement("div");
+          remove_button.setAttribute("class", "button js-delJob");
+          let remove_container = document.createElement("div");
+          remove_container.setAttribute("class", "icon icon__small");
+          let remove = document.createElement("div");
+          remove.setAttribute("class", "icon__delete");
+          remove_container.appendChild(remove);
+          remove_button.appendChild(remove_container);
+          remove_button.addEventListener("click", function() {delJob(this)});
+          d.appendChild(remove_button);
+        }
       }
       c.parentNode.children[2].appendChild(d)
     }
 
-    document.querySelector(".js-addJobhistory").addEventListener("click", function() {addJob(document.querySelector(".js-addJobhistory"))})
+    document.querySelector(".js-addJobhistory").addEventListener("click", function() {addJob(this)})
+
+
+
+    function delJob(input) {
+      let ele = input.parentNode.parentNode.children;
+      input.parentElement.remove();
+      setNames(ele);
+    }
+
+    document.querySelector(".js-delJob").addEventListener("click", function() {console.log("Del Job"); delJob(this)})
+
 
     // Add Input Fields
     function createTextfields(input) {
@@ -169,6 +204,6 @@ document.addEventListener("turbolinks:load", () => {
 
     // eventlistener for rechner tool:
     // Haben Sie Kinder? Radiobutton -->
-    document.querySelector("#rente_kinder__nachwuchs_nein").parentElement.addEventListener("click", function() {document.querySelector("#question_rente_kinder").value="0"})
+    document.querySelector("#rente_kinder__nachwuchs_nein").parentElement.addEventListener("click", function() {document.querySelector("#question_rente_kinder").value="0";document.querySelector("#rente__kinder").style.display ="none";document.querySelector("#rente__kinder_gebjahr").style.display ="none"})
     document.querySelector("#rente_kinder__nachwuchs_ja").parentElement.addEventListener("click", function() {document.querySelector("#question_rente_kinder").value="1";document.querySelector("#rente__kinder").style.display ="flex";document.querySelector("#rente__kinder_gebjahr").style.display ="flex"})
   });

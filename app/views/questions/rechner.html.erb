@@ -90,6 +90,11 @@
           <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Ende", name: "rente_jobs[0][ende]" %>
           <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Art (Minijob, Teilzeit, Vollzeit)", name: "rente_jobs[0][art]" %>
           <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Monatsbruttogehalt", name: "rente_jobs[0][brutto]" %>
+          <div class="button js-delJob">
+            <div class="icon icon__small">
+              <div class="icon__delete"></div>
+            </div>
+          </div>
       </div>
     </div>
     <div class="button js-addJobhistory">Job hinzufügen</div>
