@@ -16,8 +16,9 @@
         <li>Betrieb:<%= @question.rente_betrieb %></li>
         <li>Wunschalter:<%= @question.rente_wunschalter %></li>
         <hr>
-        <li>Beginn:<%= @question.rente_jobs[0] %></li>
-
+        <% @question.rente_jobs.each.with_index do |val, index| %></li>
+            <li><%= index + 1 %>. Job:<%= val %></li>
+        <% end %>
         <hr>
     </ul>
 

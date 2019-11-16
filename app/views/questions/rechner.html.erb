@@ -60,7 +60,7 @@
     <%= f.text_field :rente_start, :class=> "form__input" %>
   </div>
 
-  <div class="form__item">
+  <div class="form__item js-checkboxes">
     <p class="form__label">Haben Sie vor diesem Job schon anderweitig in einem abhängigen Beschäftigungsverhältnis gestanden?</p>
     <div class="form__checkboxes">
       <label class="checkbox__label" for="rente_uebergang_ja">Ja
@@ -86,14 +86,13 @@
  <%= f.label :rente_jobs, "Für die Genauigkeit der Rentenberechnung ist es hilfreich Ihre Erwerbshistorie nachzuzeichnen. 	Bitte füllen Sie aus wie lange Sie zu welchen Bedingungen gearbeitet haben.", :class=> "form__label" %>
     <div class="form__box" id="rente__jobs">
       <div class="form__grid">
-        <% 2.times do |g|%>
-          <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Beginn#{g}", name: "rente_jobs[#{g}][beginn]" %>
-          <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Ende#{g}", name: "rente_jobs[#{g}][ende]" %>
-          <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Art (Minijob, Teilzeit, Vollzeit)#{g}", name: "rente_jobs[#{g}][art]" %>
-          <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Monatsbruttogehalt#{g}", name: "rente_jobs[#{g}][brutto]" %>
-        <% end %>
+          <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Beginn", name: "rente_jobs[0][beginn]" %>
+          <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Ende", name: "rente_jobs[0][ende]" %>
+          <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Art (Minijob, Teilzeit, Vollzeit)", name: "rente_jobs[0][art]" %>
+          <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Monatsbruttogehalt", name: "rente_jobs[0][brutto]" %>
       </div>
     </div>
+    <div class="button js-addJobhistory">Job hinzufügen</div>
   </div>  
 
   <%
@@ -175,7 +174,7 @@
 
   <hr class="break">
 
-  <div class="form__item">
+  <div class="form__item js-checkboxes">
     <p class="form__label">Haben Sie Kinder?</p>
     <div class="form__checkboxes">
       <label class="checkbox__label" for="rente_kinder_ja">Ja
