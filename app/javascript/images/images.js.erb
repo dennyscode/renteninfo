@@ -1,6 +1,0 @@
-
-
-<% images_glob = Rails.application.root.join('app', 'webpacker', 'images', '*.{png,svg}') %>
-<% Dir.glob(images_glob).each do |image| %>
-  import '<%= image %>';
-<% end %>
