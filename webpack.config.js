@@ -7,14 +7,10 @@ module.exports = {
       runner: '../bin/rails runner',
       dependenciesRoot: '../app',
     },
-    module: {
-        rules: [
-          {
-            test: /\.erb$/,
-            enforce: 'pre',
-            loader: 'rails-erb-loader'
-          },
-        ]
+    loader: 'rails-erb-loader',
+    options: {
+      runner: '../bin/rails runner',
+      dependenciesRoot: '../app',
     },
     /* ... */
     plugins: [
