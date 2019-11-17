@@ -51,7 +51,6 @@ require('../packs/rechner.js');
 
 // import * as tool from '../javascript/tool.js';
 // console.log(tool)
-require('../images/images.js.erb');
 
 
 import '../stylesheets/application.scss';
