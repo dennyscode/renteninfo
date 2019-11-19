@@ -202,6 +202,10 @@ document.addEventListener("turbolinks:load", () => {
     document.querySelector(".nav_container").setAttribute("show", "true");
 
     // eventlistener for rechner tool:
+    // Haben Sie vorher gearbeitet? Radiobutton -->
+    document.querySelector("#rente_uebergang__nein").parentElement.addEventListener("click", function() {document.querySelector("#rente_jobs").style.display ="none"})
+    document.querySelector("#rente_uebergang__ja").parentElement.addEventListener("click", function() {document.querySelector("#rente_jobs").style.display ="flex";document.querySelector("#rente__kinder_gebjahr").style.display ="flex"})
+
     // Haben Sie Kinder? Radiobutton -->
     document.querySelector("#rente_kinder__nachwuchs_nein").parentElement.addEventListener("click", function() {document.querySelector("#question_rente_kinder").value="0";document.querySelector("#rente__kinder").style.display ="none";document.querySelector("#rente__kinder_gebjahr").style.display ="none"})
     document.querySelector("#rente_kinder__nachwuchs_ja").parentElement.addEventListener("click", function() {document.querySelector("#question_rente_kinder").value="1";document.querySelector("#rente__kinder").style.display ="flex";document.querySelector("#rente__kinder_gebjahr").style.display ="flex"})

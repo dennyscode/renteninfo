@@ -1,0 +1,31 @@
+
+.intro {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.intro__item {}
+
+.intro-slide {
+    height: 4em;
+}
+
+
+.carousel__text {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    padding: 1em;
+}
+
+.nav-slide {
+    display: flex;
+}
+
+.carousel__image {
+    position: relative;
+    clip: rect(0px,500px,785px,0px);
+  }
