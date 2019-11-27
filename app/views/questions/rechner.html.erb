@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'renteninfo_form.js' %>
+
 <%= render 'shared/title', title: "Rechner" %>
 
 <%= form_with(model: @question, url: questions_path(@question), class: "form") do |f| %>
