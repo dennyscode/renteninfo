@@ -8,8 +8,6 @@ class QuestionsController < ApplicationController
         @question = Question.find(params[:id])
         testvar = params[:rente_jobs]
         puts "#{testvar}"
-        testvar2 = params[:photos]
-        puts "#{testvar2}"
         @durchschnittsentgeltRV_2019 = 38901
         puts "#{@durchschnittsentgeltRV_2019} -- !!"
         @hilfsvar1 = hilfsvar1(@question.rente_start, @question.rente_kinder) #rente_vwerwerbsjahre
@@ -70,7 +68,7 @@ class QuestionsController < ApplicationController
                 :rente_reg, 
                 :rente_kinder, 
                 :rente_betrieb, 
-                :rente_wunschalter, 
+                :rente_wunschalter,
                 :rente_jobs => [
                     :start => [],
                     :ende => [],

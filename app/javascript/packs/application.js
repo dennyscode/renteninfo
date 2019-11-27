@@ -73,8 +73,6 @@ document.addEventListener("turbolinks:load", () => {
   }
 
   for (let x=0;x<document.querySelectorAll(".nav-slide__item").length;x++) {
-    document.querySelectorAll(".nav-slide__item")[x].addEventListener("click", function() {console.log("MouseOverStart -->");console.log(this); classname_toggler("nav-slide__item active", this)})
+    document.querySelectorAll(".nav-slide__item")[x].addEventListener("click", function() {classname_toggler("nav-slide__item active", this)})
   }
-
-  console.log("testing")
 });

@@ -90,10 +90,8 @@ document.addEventListener("turbolinks:load", () => {
     }
     c.parentNode.children[2].appendChild(d)
   }
-
-  document.querySelector(".js-addJobhistory").addEventListener("click", function() {addJob(this)})
-
-
+  try {document.querySelector(".js-addJobhistory").addEventListener("click", function() {addJob(this)}) }
+  catch (e) { if (e instanceof TypeError) {} }
 
   function delJob(input) {
     let ele = input.parentNode.parentNode.children;
@@ -101,7 +99,8 @@ document.addEventListener("turbolinks:load", () => {
     setNames(ele);
   }
 
-  document.querySelector(".js-delJob").addEventListener("click", function() {console.log("Del Job"); delJob(this)})
+  try { document.querySelector(".js-delJob").addEventListener("click", function() {console.log("Del Job"); delJob(this)}) }
+  catch (e) { if (e instanceof TypeError) {} }
 
 
   // Add Input Fields
@@ -109,20 +108,17 @@ document.addEventListener("turbolinks:load", () => {
     const c = document.querySelector("#rente_kinderlist");
     c.innerHTML = "";
 
-    for (let f = 0; f<input; f++) {
+    for (let i = 1; i<=input; i++) {
       let c = document.querySelector("#rente_kinderlist");
       let f = document.createElement("input");
       f.setAttribute("class", "form__input");
       f.setAttribute("multiple", "multiple");
-      f.setAttribute("placeholder", f + ". Kind");
+      f.setAttribute("placeholder", i + ". Kind");
       f.setAttribute("type", "text");
-      f.setAttribute("value", input);
       f.setAttribute("name", 'question[rente_kinder_gebjahr][]');
       c.appendChild(f);
     }
   }
-
-
 
   // this is the eventlistener for the slider rente_estimate
   document.querySelector("#slider_r_estimate").addEventListener("input", function() {document.querySelector("#rente_estimate_input").value = document.querySelector("#slider_r_estimate").value})
@@ -131,14 +127,15 @@ document.addEventListener("turbolinks:load", () => {
 
   // this is the eventlistener for the checkboxes
   document.querySelectorAll(".checkbox__label").forEach(function(element) { element.addEventListener("click", function() {this.children[0].checked= "true"}); })
-  document.querySelector(".nav_container").setAttribute("show", "true");
 
   // eventlistener for rechner tool:
   // Haben Sie vorher gearbeitet? Radiobutton -->
+
   document.querySelector("#rente_uebergang__nein").parentElement.addEventListener("click", function() {document.querySelector("#rente_jobs").style.display ="none"})
   document.querySelector("#rente_uebergang__ja").parentElement.addEventListener("click", function() {document.querySelector("#rente_jobs").style.display ="flex";document.querySelector("#rente__kinder_gebjahr").style.display ="flex"})
 
   // Haben Sie Kinder? Radiobutton -->
   document.querySelector("#rente_kinder__nachwuchs_nein").parentElement.addEventListener("click", function() {document.querySelector("#question_rente_kinder").value="0";document.querySelector("#rente__kinder").style.display ="none";document.querySelector("#rente__kinder_gebjahr").style.display ="none"})
   document.querySelector("#rente_kinder__nachwuchs_ja").parentElement.addEventListener("click", function() {document.querySelector("#question_rente_kinder").value="1";document.querySelector("#rente__kinder").style.display ="flex";document.querySelector("#rente__kinder_gebjahr").style.display ="flex"})
+  console.log("Testing Renteninfo_Form.js")
 });
