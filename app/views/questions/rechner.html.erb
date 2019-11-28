@@ -1,4 +1,16 @@
 <%= javascript_pack_tag 'renteninfo_form' %>
+<%= javascript_pack_tag 'calendar' %>
+
+
+<h2>JavaScript</h2>
+<div class="calendar_button" id="calendar_but_prevmonth">Previous Month</div>
+<div class="calendar_button" id="calendar_but_nextmonth">Next Month</div>
+<div class="calendar_button" id="calendar_but_view4day">4 Days</div>
+<div class="calendar_button" id="calendar_but_view4day_next">4 Days - Next</div>
+<div class="calendar_button" id="calendar_but_view4day_prev">4 Days - Prev</div>
+
+
+<div class="calendar"></div>
 
 <%= render 'shared/title', title: "Rechner" %>
 

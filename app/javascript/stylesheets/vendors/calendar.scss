@@ -1,0 +1,100 @@
+* { box-sizing: border-box }
+// * { border: 1px solid red;}
+
+.calendar {
+    width: 80%;
+    margin: 2em auto;
+    border: 2px solid black;
+    border-radius: 1em;
+}
+
+.month {
+}
+
+.mouseactive {
+    background-color: orange !important;
+}
+
+.active_day {
+    border: 2px solid black;
+}
+
+.active_booking {
+    background-color: green;
+}
+
+.weekdays_header, .week {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly
+}
+
+.weekday, .weekdays_header div {
+    flex-basis: 100%;
+    border-right: .5px solid black;
+    border-bottom: .5px solid black;
+}
+
+.weekdays_header {
+    height: 2em;
+}
+
+.weekday {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+    height: 3.5em;
+}
+
+.today {
+    background-color: yellow;
+}
+
+.week {
+}
+
+.calendar_button {
+    border: 1px solid black;
+    border-radius: .5em;
+    width: 150px;
+    padding: .5em;
+    text-align: center;
+}
+
+.calendar_button:hover {
+    background-color: grey;
+    cursor: pointer;
+}
+
+// 4 Days
+
+.view_4days {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.fourday {
+    width: 25%;
+    height: 20em;
+}
+
+.weekday_sh {
+    display: none;
+}
+
+.weekday_lg {
+    display: flex;
+}
+@media only screen and (max-width: 750px) {
+    .weekday_sh {
+        display: flex;
+    }
+    .weekday_lg {
+        display: none;
+    }
+
+}
