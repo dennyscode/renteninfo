@@ -6,7 +6,7 @@
 //import "./questions.js";
 let testBut
 
-document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener("turbolinks:load", () => {
 
     // testBut = document.querySelector(".testBut").addEventListener("click", function() {
     //     console.log("huuhu")
