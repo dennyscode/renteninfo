@@ -27,6 +27,9 @@ require("tippy.js/dist/tippy-bundle.iife.min.js");
 import axios from 'axios';
 require('axios');
 
+console.log("JQuery Test");
+console.log($("body"));
+
 // https://www.aktuar-hoffmann.de/_durchschnittsentgelt_rentenversicherung.html
 // axios.get("https://jsonplaceholder.typicode.com/users").then(res => {
 //     console.log(res)

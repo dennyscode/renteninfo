@@ -51,7 +51,7 @@ module QuestionsHelper
     end
 
     def rente_heute(rente_vreg, rente_vwerwerbsjahre, rente_vBenoetigt)
-        rente_vHeute = rente_vBenoetigt.to_f * rente_vreg.to_f * rente_vwerwerbsjahre.to_f
+        rente_vHeute = rente_ventgeltpunkte.to_f * rente_vreg.to_f.to_f * rente_vwerwerbsjahre.to_f
         return rente_vHeute
     end
 
