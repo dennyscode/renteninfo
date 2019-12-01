@@ -22,18 +22,20 @@
         <hr>
     </ul>
 
-<p>Hilfsvariable 1: <%= @hilfsvar1 %>  (rente_vwerwerbsjahre)</p>
+<p>Hilfsvariable 1: <%= @hilfsvar1 %>  (rente_vwerwerbsjahre) </p>
 <p>Hilfsvariable 2: <%= @hilfsvar2 %>  (rente_vreg)</p>
 <p>Hilfsvariable 3: <%= @hilfsvar3 %> (rente_ventgeltpunkte)</p>
 <p>Hilfsvariable 4: <%= @hilfsvar4 %> (rente_VBisZurRente )</p>
-<p>Hilfsvariable 5: <%= @hilfsvar5 %> (rente_vBenoetigt )</p>
+<p>Hilfsvariable 5: <%= @hilfsvar5 %> (rente_vAnpassung )</p>
+<p>Hilfsvariable 6: <%= @hilfsvar6 %> (rente_vBenoetigt )</p>
+
 <br>
 <p>Rente = Erwerbspunkte (EP) * Rentenwert (RW) * Erwerbsjahre</p>
 <p>(1/3) Formel für Rentenberechnung</p>
 <p>Rente heute = VEntgeltpunkte*Vreg*VErwerbsjahre = <%= @rente_heute %></p>
 <p>(2/3) Formel für Hochrechnung</p>
 <p>Hochrechnung = Rente heute + VEntgeltpunkte*Vreg* VbiszurRente = <%= @rente_hochrechnung %></p>
-<p>Hochrechnung mit Rentenanpassung= Rente heute + VEntgeltpunkte*Vreg*1.01(Vgebjahr + 67)-(Folgejahr)*VbiszurRente = <%= @rente_hochrechnungMitAnpassung %></p>
+<p>Hochrechnung mit Rentenanpassung= Rente heute + (VEntgeltpunkte * VAnpassung) = <%= @rente_hochrechnungMitAnpassung %></p>
 <p>Fiktive Rente = VBenötigt*Vreg*VErwerbsjahre = <%= @rente_fiktiv  %></p>
 <p>Notwendiges Gehalt = ((VBenötigt*100)*Jahresbrutto)/100 = <%= @rente_notwendig %></p>
-<p>Notwendige Jahre = (Vestimate/VEntgeltpunkte* Vreg)-(VErwerbsjahre + VbiszurRente) = <%= @rente_notwendigJahre %></p>
+<p>Notwendige Jahre = (Vestimate/(VEntgeltpunkte* Vreg)) = <%= @rente_notwendigJahre %></p>
