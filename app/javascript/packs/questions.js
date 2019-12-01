@@ -23,7 +23,6 @@ $( "body[data-page='QuestionsRechner']" ).ready(function() {
     for (let f = 0; f < counter; f++) {
       input[f].children[0].setAttribute("name", "rente_jobs[" + f + "][beginn]");
       input[f].children[1].setAttribute("name", "rente_jobs[" + f + "][ende]");
-      input[f].children[2].setAttribute("name", "rente_jobs[" + f + "][art]");
       input[f].children[3].setAttribute("name", "rente_jobs[" + f + "][brutto]");
     }
   }
@@ -66,15 +65,11 @@ $( "body[data-page='QuestionsRechner']" ).ready(function() {
         f.setAttribute("name", "rente_jobs[" + elements + "][ende]");
       }
       if (i==2) {
-        f.setAttribute("placeholder", "Art");
-        f.setAttribute("name", "rente_jobs[" + elements + "][art]");
-      }
-      if (i==3) {
         f.setAttribute("placeholder", "Brutto");
         f.setAttribute("name", "rente_jobs[" + elements + "][brutto]");
       }
       d.appendChild(f)
-      if (i==3) {
+      if (i==2) {
         let remove_button = document.createElement("div");
         remove_button.setAttribute("class", "button js-delJob");
         let remove_container = document.createElement("div");

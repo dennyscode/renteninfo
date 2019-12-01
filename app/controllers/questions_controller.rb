@@ -32,7 +32,7 @@ class QuestionsController < ApplicationController
         temparray = []
         params[:rente_jobs].values.each.with_index do |val, index|
             puts "test #{index}, #{val}"
-            temparray << ["#{val["beginn"]}, #{val["ende"]}, #{val["art"]}, #{val["brutto"]}"]
+            temparray << ["#{val["beginn"]}, #{val["ende"]}, #{val["brutto"]}"]
         end
         @questions = Question.new(questions_params)
         @questions.rente_jobs = temparray
@@ -71,9 +71,8 @@ class QuestionsController < ApplicationController
                 :rente_jobs => [
                     :start => [],
                     :ende => [],
-                    :art => [],
                     :brutto => [],
-                ], 
+                ],
                 :rente_kinder_gebjahr => [],
                 photos: {
                     photo: {
