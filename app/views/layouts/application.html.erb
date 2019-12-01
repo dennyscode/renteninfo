@@ -9,7 +9,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body data-page="<%= @body_page_name %>">
     <%= render 'layouts/nav' %>
     <p id="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

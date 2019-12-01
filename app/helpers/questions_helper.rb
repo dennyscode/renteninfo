@@ -51,6 +51,9 @@ module QuestionsHelper
     end
 
     def rente_heute(rente_vreg, rente_vwerwerbsjahre, rente_ventgeltpunkte)
+        puts "Rente Entgeltpunkte #{rente_ventgeltpunkte.to_f}"
+        puts "Rente VReg #{rente_vreg.to_f}"
+        puts "Rente Erwerbsjahre #{rente_vwerwerbsjahre.to_f}"
         rente_vHeute = rente_ventgeltpunkte.to_f * rente_vreg.to_f.to_f * rente_vwerwerbsjahre.to_f
         return rente_vHeute
     end

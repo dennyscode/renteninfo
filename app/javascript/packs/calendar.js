@@ -1,4 +1,8 @@
-$(".pages.contact").ready(function() {
+$( "body[data-page='QuestionsRechner']" ).ready(function() {
+
+    console.log("Testing before:")
+
+    console.log("Testing while:")
 
     let date = new Date();
     let calendar_nextbutton;
@@ -421,22 +425,17 @@ $(".pages.contact").ready(function() {
     }
 
 
-    $( document ).on('turbolinks:load', function() {
         show_calendar(date);
-        try {
-            calendar_nextbutton = document.querySelector("#calendar_but_nextmonth");
-            calendar_nextbutton.addEventListener("click", show_next_month, false);
-            calendar_prevbutton = document.querySelector("#calendar_but_prevmonth");
-            calendar_prevbutton.addEventListener("click", show_prev_month, false);
-            calendar_view4days = document.querySelector("#calendar_but_view4day")
-            calendar_view4days.addEventListener("click", function() {show_view_4days(date), false})
-            calendar_view4days_next = document.querySelector("#calendar_but_view4day_next")
-            calendar_view4days_next.addEventListener("click", function() {console.log(date);date=new Date(date.setDate(date.getDate()+1)); show_view_4days(date)}, false);
-            calendar_view4days_prev = document.querySelector("#calendar_but_view4day_prev")
-            calendar_view4days_prev.addEventListener("click", function() {date=new Date(date.setDate(date.getDate()-1)); show_view_4days(date)}, false);
-        }
-        catch (e) { if (e instanceof TypeError) {} }
-        })
+        calendar_nextbutton = document.querySelector("#calendar_but_nextmonth");
+        calendar_nextbutton.addEventListener("click", show_next_month, false);
+        calendar_prevbutton = document.querySelector("#calendar_but_prevmonth");
+        calendar_prevbutton.addEventListener("click", show_prev_month, false);
+        calendar_view4days = document.querySelector("#calendar_but_view4day")
+        calendar_view4days.addEventListener("click", function() {show_view_4days(date), false})
+        calendar_view4days_next = document.querySelector("#calendar_but_view4day_next")
+        calendar_view4days_next.addEventListener("click", function() {console.log(date);date=new Date(date.setDate(date.getDate()+1)); show_view_4days(date)}, false);
+        calendar_view4days_prev = document.querySelector("#calendar_but_view4day_prev")
+        calendar_view4days_prev.addEventListener("click", function() {date=new Date(date.setDate(date.getDate()-1)); show_view_4days(date)}, false);
 
 
 
@@ -456,4 +455,5 @@ $(".pages.contact").ready(function() {
     //     console.log(doc)
     // };
 
-})
+    console.log("Testing after:")
+});
