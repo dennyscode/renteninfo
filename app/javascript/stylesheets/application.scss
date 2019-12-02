@@ -3,12 +3,12 @@
 // Variables:
 @import './vars/variables';
 
-// Mixins
-@import './mixins/mixins_breakpoints';
-
 // Settings:
 @import './settings/breakpoints';
 @import './settings/main';
+
+// Mixins
+@import './mixins/mixins_breakpoints';
 
 // Elements:
 @import './elements/title';
@@ -17,8 +17,6 @@
 
 // Areas:
 @import './areas/nav-slider';
-
-
 
 // Modules:
 @import './modules/footer';

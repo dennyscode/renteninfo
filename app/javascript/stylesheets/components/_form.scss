@@ -2,11 +2,21 @@
   display: flex;
   flex-direction: column;
   padding: 1em;
+  @include md {
+    width: 80%;
+    margin: auto;
+  }
 }
 
 .form__item {
   display: flex;
   flex-direction: column;
+
+  @include md {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .form__box {
@@ -14,10 +24,10 @@
   flex-direction: column;
 }
 
-.form__
-
 .form__label {
-
+  @include md {
+    width: 50%;
+  }
 }
 
 .form__input {
@@ -26,6 +36,9 @@
   flex-direction: column;
   padding: 1em;
   text-align: center;
+  @include md {
+    width: 50%;
+  }
 }
 
 .form__checkboxes .checkbox__label {

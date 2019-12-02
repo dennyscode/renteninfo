@@ -13,10 +13,27 @@ $media-direction:       min;  // min / max — default is min (mobile first)
 // Here are my basic set. I change the values a bit from project to project
 $breakpoints: (
   'default':            '',
-  'sm':                 380px,
-  'xs':                 480px,
-  'md':                  667px,
-  'lg':                  1024px,
-  'xl':                  1280px,
-  'xxl':                 1680px,
+  'sm':                 '380px',
+  'xs':                 '480px',
+  'md':                  '667px',
+  'lg':                  '1024px',
+  'xl':                  '1280px',
+  'xxl':                 '1680px',
 );
+// Extra Small tablets and large smartphones (landscape view)
+$screen-sm-min: 380px;
+
+// Small tablets and large smartphones (landscape view)
+$screen-xs-min: 480px;
+
+// Small tablets (portrait view)
+$screen-md-min: 667px;
+
+// Tablets and small desktops
+$screen-lg-min: 1024px;
+
+// Large tablets and desktops
+$screen-xl-min: 1280px;
+
+// Extra Large tablets and desktops
+$screen-xl-min: 1680px;

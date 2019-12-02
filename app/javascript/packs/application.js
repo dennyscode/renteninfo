@@ -42,7 +42,7 @@ console.log($("body"));
 // import { Trix } from "trix";
 // require("@rails/actiontext")
 
-tippy.tippy("h2", { content: "testen"});
+// tippy.tippy("h2", { content: "testen"});
 require.context('../images', true);
 
 let works;
