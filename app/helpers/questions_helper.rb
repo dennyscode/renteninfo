@@ -34,9 +34,9 @@ module QuestionsHelper
     def hilfsvar3(rente_eink, durchschnittsentgeltRV)
         puts "Durchschnittsentgeld #{durchschnittsentgeltRV}"
         puts "rente_eink #{rente_eink}"
-        rente_ventgeltpunkte = rente_eink.to_f / durchschnittsentgeltRV.to_f
+        rente_ventgeltpunkte = rente_eink.to_f.round(2) / durchschnittsentgeltRV.to_f
         puts "Hilfsvariable 3) #{rente_ventgeltpunkte}"
-        return rente_ventgeltpunkte
+        return rente_ventgeltpunkte.round(2)
     end
 
     def hilfsvar4(rente_dauer)
@@ -47,11 +47,12 @@ module QuestionsHelper
 
     def hilfsvar5(rente_vBisZurRente, rente_vReg)
         rente_vAnpassung = (rente_vReg * 1.01 ** rente_vBisZurRente) * rente_vBisZurRente
-        return rente_vAnpassung
+        return rente_vAnpassung.round(2)
     end
 
     def hilfsvar6( rente_estimate, rente_vwerwerbsjahre, rente_vBisZurRente, rente_vReg)
         rente_vBenoetigt = rente_estimate / (( rente_vwerwerbsjahre + rente_vBisZurRente) * rente_vReg )
+        return rente_vBenoetigt.round(2)
     end
 
     def rente_heute(rente_vReg, rente_vwerwerbsjahre, rente_ventgeltpunkte)
@@ -59,12 +60,12 @@ module QuestionsHelper
         puts "Rente VReg #{rente_vReg.to_f}"
         puts "Rente Erwerbsjahre #{rente_vwerwerbsjahre.to_f}"
         rente_vHeute = rente_ventgeltpunkte.to_f * rente_vReg.to_f.to_f * rente_vwerwerbsjahre.to_f
-        return rente_vHeute
+        return rente_vHeute.round(2)
     end
 
     def rente_fiktiv(rente_vBenoetigt, rente_vReg, rente_vwerwerbsjahre)
-        rente_fiktiv = rente_vBenoetigt.to_f*rente_vReg.to_f/rente_vwerwerbsjahre.to_f
-        return rente_fiktiv
+        rente_fiktiv = rente_vBenoetigt.to_f.round(2)*rente_vReg.to_f/rente_vwerwerbsjahre.to_f.round(2)
+        return rente_fiktiv.round(2)
     end
 
     def notwendiges_gehalt(rente_vBenoetigt, durchschnittsentgeltRV)
@@ -73,13 +74,13 @@ module QuestionsHelper
     end
 
     def notwendige_jahre(rente_estimate, rente_ventgeltpunkte, rente_vReg)
-        rente_notwendigJahre = rente_estimate.to_f / (rente_ventgeltpunkte.to_f * rente_vReg.to_f)
-        return rente_notwendigJahre
+        rente_notwendigJahre = rente_estimate.to_f.round(2) / (rente_ventgeltpunkte.to_f.round(2) * rente_vReg.to_f.round(2))
+        return rente_notwendigJahre.round(2)
     end
 
     def hochrechnung(rente_heute, rente_ventgeltpunkte, rente_vReg, rente_vBisZurRente)
-        rente_hochrechnung = rente_heute.to_f + (rente_ventgeltpunkte.to_f * rente_vReg.to_f * rente_vBisZurRente.to_f)
-        return rente_hochrechnung
+        rente_hochrechnung = rente_heute.to_f.round(2) + (rente_ventgeltpunkte.to_f.round(2) * rente_vReg.to_f * rente_vBisZurRente.to_f)
+        return rente_hochrechnung.round(2)
     end
 
     def hochrechnungMitAnpassung(rente_heute, rente_ventgeltpunkte, rente_vAnpassung)
@@ -87,9 +88,9 @@ module QuestionsHelper
         puts "rente_heute: #{rente_heute}"
         puts "ventgeld: #{rente_ventgeltpunkte}"
         puts "vanpassung: #{rente_vAnpassung}"
-        rente_hochrechnungMitAnpassung = rente_heute.to_f + (rente_ventgeltpunkte.to_f * rente_vAnpassung.to_f)
+        rente_hochrechnungMitAnpassung = rente_heute.to_f.round(2) + (rente_ventgeltpunkte.to_f.round(2) * rente_vAnpassung.to_f.round(2))
         puts "Rente_HochrechnungMitAnpassung #{rente_hochrechnungMitAnpassung}"
-        return rente_hochrechnungMitAnpassung
+        return rente_hochrechnungMitAnpassung.round(2)
     end
 
 end
