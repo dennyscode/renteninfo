@@ -2,6 +2,9 @@
     position: block;
     // max-width:1500px;
     margin: auto;
+    text-align: center;
+    overflow: hidden;
+    background-color: $sub_col;
 }
 
 .nav-slide__box {
@@ -14,6 +17,7 @@
     width: 30%;
     max-height: 500px;
     margin: 0 -4px;
+    position: relative;
 }
 
 .nav-slide__item.active {
@@ -52,13 +56,40 @@
     height: auto;
     width: 133.3%;
     filter: brightness(50%) sepia(100%);
-    margin: -5px 0 0 0;
+    margin: -5px -10px 0 -15px;
     transition: 1.5s filter;
 }
 
+.nav-slide__textbox {
+    // display: none;
+    // https://stackoverflow.com/questions/35871294/center-text-over-an-image-in-flexbox
+    position: absolute;
+    // left: 50%;                        /* horizontal alignment */
+    top: 50%;                         /* vertical alignment */
+    transform: translate(10%, -50%); /* precise centering; see link below */
+    background-color:white;
+    border-radius: 10px;
+    width: 40px;
+    padding: 5px;
+    height: 80%;
+    border: 2px solid gray;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.nav-slide__item.active .nav-slide__textbox {
+    // display: block;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
 .nav-slide__image:hover {
-    filter: sepia(10%);
-    transition: 1.5s filter;
+    filter: brightness(80%) sepia(10%);
+    transition: 0.5s filter;
 }
 
 .mask {
