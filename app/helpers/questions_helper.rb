@@ -64,7 +64,7 @@ module QuestionsHelper
     end
 
     def rente_fiktiv(rente_vBenoetigt, rente_vReg, rente_vwerwerbsjahre)
-        rente_fiktiv = rente_vBenoetigt.to_f.round(2)*rente_vReg.to_f/rente_vwerwerbsjahre.to_f.round(2)
+        rente_fiktiv = rente_vBenoetigt.to_f.round(2) * rente_vReg.to_f  * rente_vwerwerbsjahre.to_f.round(2)
         return rente_fiktiv.round(2)
     end
 

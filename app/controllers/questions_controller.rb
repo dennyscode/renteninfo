@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
         @hilfsvar5 = hilfsvar5(@hilfsvar4, @hilfsvar2) #rente_vAnpassung
         @hilfsvar6 = hilfsvar6(@question.rente_estimate, @hilfsvar1, @hilfsvar4, @hilfsvar2)
         @rente_heute = rente_heute(@hilfsvar2, @hilfsvar1, @hilfsvar3)
-        @rente_fiktiv = rente_fiktiv(@hilfsvar5, @hilfsvar2, @hilfsvar1)
+        @rente_fiktiv = rente_fiktiv(@hilfsvar6, @hilfsvar2, @hilfsvar1)
         @rente_notwendig = notwendiges_gehalt(@hilfsvar6, @durchschnittsentgeltRV_2019)
         @rente_notwendigJahre = notwendige_jahre(@question.rente_estimate, @hilfsvar3, @hilfsvar2)
         @rente_hochrechnung = hochrechnung(@rente_heute, @hilfsvar3, @hilfsvar2, @hilfsvar4)
@@ -64,7 +64,7 @@ class QuestionsController < ApplicationController
                 :rente_start,  
                 :rente_dauer, 
                 :rente_eink, 
-                :rente_reg, 
+                :rente_reg,
                 :rente_kinder, 
                 :rente_betrieb, 
                 :rente_wunschalter,
