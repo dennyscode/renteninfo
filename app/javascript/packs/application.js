@@ -7,7 +7,8 @@ import "regenerator-runtime/runtime";
 
 require("@rails/ujs").start()
 require("turbolinks").start()
-import tippy from 'tippy.js/dist/tippy-bundle.cjs';
+import tippy from 'tippy.js/dist/tippy.iife.js'
+import 'tippy.js/dist/tippy.css';
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
@@ -24,7 +25,6 @@ require("@rails/actiontext")
 // require("@fortawesome/fontawesome-free/js/all")
 import 'trix';
 import 'trix/dist/trix.js';
-require("tippy.js/dist/tippy-bundle.iife.min.js");
 
 import axios from 'axios';
 require('axios');
@@ -42,9 +42,7 @@ console.log($("body"));
 // import { Trix } from "trix";
 // require("@rails/actiontext")
 
-// tippy.tippy("h2", { content: "testen"});
 require.context('../images', true);
-
 let works;
 // require('../javascript/javascript.js.erb');
 require('../javascript/questions.js');
