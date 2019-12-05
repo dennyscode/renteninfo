@@ -9,7 +9,7 @@ gem 'actiontext'
 gem 'pg', '>= 0.18', '< 2.0'
 gem "figaro"
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 5'
 # gem 'trix-rails', require: 'trix'
