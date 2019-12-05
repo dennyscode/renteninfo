@@ -32,7 +32,9 @@ document.addEventListener("turbolinks:load", () => {
     //     //   .then(function(response) {...},
     //     //   .catch(function(error) {...}
     //     //   })
-
+    $( "body[data-page='MainsMain']" ).ready(function() {
+        document.querySelector(".nav-slide__hamburger").addEventListener("click", function() { const sidebar = document.querySelector(".sidebar"); if (sidebar.style.display == "" || sidebar.style.display == "none") {console.log("none -> block"); sidebar.style.display = "block"} else {console.log("block -> none"); sidebar.style.display = "none"} });
+    });
 
     // });
 
