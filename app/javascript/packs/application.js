@@ -7,8 +7,6 @@ import "regenerator-runtime/runtime";
 
 require("@rails/ujs").start()
 require("turbolinks").start()
-import tippy from 'tippy.js/dist/tippy.iife.js'
-import 'tippy.js/dist/tippy.css';
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
@@ -25,8 +23,11 @@ require("@rails/actiontext")
 // require("@fortawesome/fontawesome-free/js/all")
 import 'trix';
 import 'trix/dist/trix.js';
-
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/dist/backdrop.css';
 import axios from 'axios';
+import chartjs from 'chart.js/dist/Chart.bundle';
 require('axios');
 
 console.log("JQuery Test");
@@ -37,7 +38,6 @@ console.log($("body"));
 //     console.log(res)
 // })
 
-// import "tippy.js/dist/tippy-bundle.iife.min.js";
 //
 // import { Trix } from "trix";
 // require("@rails/actiontext")
@@ -49,6 +49,7 @@ require('../javascript/questions.js');
 require('../javascript/tool.js');
 require('../javascript/javascript.js');
 require('../packs/rechner.js');
+// require('../javascript/vendors/tippy');
 
 
 
@@ -60,8 +61,10 @@ import '../stylesheets/application.scss';
 import { string } from 'postcss-selector-parser';
 
 document.addEventListener("turbolinks:load", () => {
+  tippy('#singleElement', {
+    content: 'Tooltip',
+  });
   console.log('Hello World from Webpacker');
-
   function classname_toggler(active_name, inactive_element) {
     // Inactive Element using: 'this'
     let inactive_name = inactive_element.getAttribute("class");
@@ -78,4 +81,46 @@ document.addEventListener("turbolinks:load", () => {
   for (let x=0;x<document.querySelectorAll(".nav-slide__item").length;x++) {
     document.querySelectorAll(".nav-slide__item")[x].addEventListener("click", function() {classname_toggler("nav-slide__item active", this)})
   }
+
+
+
+    // ChartJS
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
 });

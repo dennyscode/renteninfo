@@ -1,10 +1,21 @@
 .sidebar {
     display: none;
     position: absolute;
+    flex-direction: column;
+    justify-content: space-evenly;
     right: 0;
     width: 45%;
     height: 100%;
     top: 0;
-    // z-index: 10;
+    z-index: 10;
     background-color: wheat;
+    padding-top: 4em;
+}
+
+.sidebar__element {
+    padding: 2em;
+    border: 1px solid white;
+    font-size: 1em;
+    text-align: center;
+    margin: 0 .5em;
 }

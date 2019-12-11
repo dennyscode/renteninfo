@@ -116,9 +116,9 @@
 .nav-slide__buttonbox {
     position: absolute;
     text-align: right;
-    z-index: 1;
     right: 0;
     display: flex;
+    z-index: 15;
 }
 
 .nav-slide__buttonbox > * {
