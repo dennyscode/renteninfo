@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_11_183035) do
+ActiveRecord::Schema.define(version: 2020_01_14_225601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,20 +67,6 @@ ActiveRecord::Schema.define(version: 2019_11_11_183035) do
     t.integer "rente_wunschalter"
     t.text "rente_jobs", default: [], array: true
     t.integer "rente_zusatz"
-  end
-
-  create_table "rentenrechners", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "rente_estimate"
-    t.integer "rente_art"
-    t.integer "rente_start"
-    t.integer "rente_dauer"
-    t.integer "rente_eink"
-    t.integer "rente_reg"
-    t.integer "rente_kinder"
-    t.integer "rente_kinder_gebjahr", default: [], array: true
-    t.integer "rente_betrieb"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,3 +1,5 @@
+<%= render "layouts/aironne" %>
+
 <%= yield :page_scripts %>
 
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -32,7 +34,9 @@
 
 <section>
     <ul class="intro">
-        <li class="intro__item">
+        <%
+=begin%>
+ <li class="intro__item">
             <%= image_pack_tag "baseline-accessibility_new-24px.svg", :class => 'icon' %>
             <p class="icon__title"></p>
             <p class="icon__text"></p>
@@ -52,6 +56,8 @@
             <p class="icon__title"></p>
             <p class="icon__text"></p>
         </li>
+<%
+=end%>
     </ul>
 </section>
 <button id="singleElement" data-tippy-content="Tooltip">Tooltip-Beispiel</button>

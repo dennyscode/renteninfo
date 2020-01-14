@@ -36,17 +36,6 @@ document.addEventListener("turbolinks:load", () => {
         document.querySelector(".nav-slide__hamburger").addEventListener("click", function() { const sidebar = document.querySelector(".sidebar"); if (sidebar.style.display == "" || sidebar.style.display == "none") {console.log("none -> flex"); sidebar.style.display = "flex"} else {console.log("block -> none"); sidebar.style.display = "none"} });
     });
 
-    // });
-
-    const hamburger = document.querySelector(".nav_hamburger")
-    hamburger.onclick = function nav_collapse() {
-        if (document.querySelector(".nav_container").getAttribute("show") == "false") {
-            document.querySelector(".nav_container").setAttribute("show", "true")
-        } else {
-            document.querySelector(".nav_container").setAttribute("show", "false")
-        }
-    }
-
     // Adding an Event listener to activate/deactivate the navbar-toggle
     function myFunction(x) {
         if (x.matches) { // If media query matches

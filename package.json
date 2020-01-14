@@ -4,10 +4,11 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@rails/actioncable": "^6.0.0-alpha",
-    "@rails/actiontext": "^6.0.0",
+    "@rails/actiontext": "^6.0.2-1",
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
-    "@rails/webpacker": "^4.0.7",
+    "@rails/webpacker": "4.2.2",
+    "aironne-calendar": "https://github.com/dennyscode/aironne-calendar",
     "axios": "^0.19.0",
     "bootstrap": "4.3.1",
     "chart.js": "^2.9.3",
@@ -26,7 +27,7 @@
     "@fortawesome/fontawesome-free": "^5.10.2",
     "sass": "^1.22.10",
     "sass-loader": "^7.2.0",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.10.1"
   },
   "engines": {
     "yarn": ">= 0.25.2"

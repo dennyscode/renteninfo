@@ -28,6 +28,9 @@ import 'tippy.js/dist/tippy.css';
 import 'tippy.js/dist/backdrop.css';
 import axios from 'axios';
 import chartjs from 'chart.js/dist/Chart.bundle';
+// import aironnecalendar from 'aironne-calendar';
+// require('./calendar')
+// import './calendar'
 require('axios');
 
 console.log("JQuery Test");
