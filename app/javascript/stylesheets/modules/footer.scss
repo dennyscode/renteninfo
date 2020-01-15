@@ -1,11 +1,29 @@
 .footer {
     display: flex;
-    flex-direction: row;
-    position: absolute;
+    flex-direction: column;
     bottom: 0;
     background-color: $sub_col;
     justify-content: space-between;
     width: 100%;
+    color: #ccc;
+}
+
+.footer__container {
+    margin: 2em auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px solid #ccc;
+}
+
+.footer__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__item--icons {
+    flex-direction: row;
 }
 
 .footer__interactive {
@@ -14,6 +32,16 @@
     list-style: none;
 }
 
-.footer__copyright {
+.footer__icon {
+    width: 50px;
+    fill: #ccc;
+}
 
+.footer__copyright {
+    width: 100%;
+    text-align: center;
+}
+
+.footer__logo {
+    width: 50px;
 }
