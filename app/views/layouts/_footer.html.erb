@@ -1,5 +1,5 @@
 <footer class="footer">
-    <section class="footer__container">
+    <section class="footer content_container content_container--row ">
         <ul class="footer__item footer__item--icons">
             <li>
                 <!-- Icon: Mail -->
@@ -26,8 +26,9 @@
         </ul>
         <div class="footer__item">
             <ul>
-                <li>Team</li>
-                <li>Impressums</li>
+                <li><%= link_to 'Team', team_path, :class => 'link' %></li>
+                <li><%= link_to 'Kontakt', contact_path, :class => 'link' %></li>
+                <li><%= link_to 'Impressum', impressum_path, :class => 'link' %></li>
             </ul>
         </div>
 

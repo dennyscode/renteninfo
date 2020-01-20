@@ -2,19 +2,10 @@
     display: flex;
     flex-direction: column;
     bottom: 0;
-    background-color: $sub_col;
+    background-color: $nav_col;
     justify-content: space-between;
     width: 100%;
     color: #ccc;
-}
-
-.footer__container {
-    margin: 2em auto;
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: 2px solid #ccc;
 }
 
 .footer__item {
@@ -43,5 +34,5 @@
 }
 
 .footer__logo {
-    width: 50px;
+    width: 80px;
 }

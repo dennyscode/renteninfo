@@ -9,7 +9,7 @@ gem 'actiontext'
 gem 'pg', '>= 0.18', '< 2.0'
 gem "figaro"
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.4'
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 5'
 # gem 'trix-rails', require: 'trix'
@@ -29,7 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'image_processing', '~> 1.2'
 gem 'log4r', '~> 1.1', '>= 1.1.10'
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', github: 'ojab/bootsnap', require: false
+gem 'bootsnap', '~> 1.4', '>= 1.4.5'
 gem 'sassc', require: false
 gem "sassc-rails"
 gem "aws-sdk-s3", require: false

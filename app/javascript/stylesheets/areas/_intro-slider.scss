@@ -1,5 +1,6 @@
-.nav-slide {
-    position: block;
+.intro-slide {
+    top: -60px;
+    position: relative;
     // max-width:1500px;
     margin: auto;
     text-align: center;
@@ -7,12 +8,12 @@
     background-color: $sub_col;
 }
 
-.nav-slide__box {
+.intro-slide__box {
 
 }
 
 
-.nav-slide__item {
+.intro-slide__item {
     display: inline-block;
     width: 30%;
     max-height: 500px;
@@ -20,39 +21,39 @@
     position: relative;
 }
 
-.nav-slide__item.active {
+.intro-slide__item.active {
     width: 40%;
     height: 100%;
     transition: width .75s;
     animation-iteration-count: infinite;
     animation-duration: .75s;
     animation-iteration-count: 1;
-    -webkit-animation-name: nav-slide_click-fade; /* Safari 4.0 - 8.0 */
+    -webkit-animation-name: intro-slide_click-fade; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: .75s; /* Safari 4.0 - 8.0 */
     -webkit-animation-play-state: running;
     -webkit-animation-iteration-count: 1;
 }
 
 /* Safari 4.0 - 8.0 */
-@-webkit-keyframes nav-slide_click-fade {
+@-webkit-keyframes intro-slide_click-fade {
     from {width: 30%}
     to {width: 40%}
   }
 
   /* Standard syntax */
-  @keyframes nav-slide_click-fade {
+  @keyframes intro-slide_click-fade {
     from {width: 30%}
     to {width: 40%}
   }
 
-.nav-slide__item.active .nav-slide__image {
+.intro-slide__item.active .intro-slide__image {
     width: 100%;
     height: auto;
     filter: brightness(100%);
     transition: .75s width, 1.5s filter;
 }
 
-.nav-slide__image {
+.intro-slide__image {
     height: auto;
     width: 133.3%;
     filter: brightness(50%) sepia(100%);
@@ -60,7 +61,7 @@
     transition: 1.5s filter;
 }
 
-.nav-slide__textbox {
+.intro-slide__textbox {
     // display: none;
     // https://stackoverflow.com/questions/35871294/center-text-over-an-image-in-flexbox
     position: absolute;
@@ -80,14 +81,14 @@
     text-orientation: mixed;
 }
 
-.nav-slide__item.active .nav-slide__textbox {
+.intro-slide__item.active .intro-slide__textbox {
     // display: block;
     visibility: visible;
     opacity: 1;
     transition: visibility 0s, opacity 0.5s linear;
 }
 
-.nav-slide__image:hover {
+.intro-slide__image:hover {
     filter: brightness(80%) sepia(10%);
     transition: 0.5s filter;
 }
@@ -104,16 +105,16 @@
     margin-top: -5px;
 }
 
-.nav-slide__item.active .mask {
+.intro-slide__item.active .mask {
     width: 40%;
 }
 
-.nav-slide__item .mask {
+.intro-slide__item .mask {
     width: 30%;
     transition: 1.5s width;
 }
 
-.nav-slide__buttonbox {
+.intro-slide__buttonbox {
     position: absolute;
     text-align: right;
     right: 0;
@@ -121,33 +122,31 @@
     z-index: 15;
 }
 
-.nav-slide__buttonbox > * {
+.intro-slide__buttonbox > * {
     margin: .5em;
 }
 
-.link--nav-slide {
-    color: white;
+.link--intro-slide {
     text-decoration-color: white;
 }
 
-.link--nav-slide:hover {
-    color: white;
+.link--intro-slide:hover {
     text-decoration-color: white;
 }
 
-.nav-slide__hamburger {
+.intro-slide__hamburger {
     display: inline-block;
     border: 4px solid white;
     border-radius: 10%;
     width: 4em;
 }
 
-.line--nav-slide {
+.line--intro-slide {
     margin: 8%;
     height: .75vh;
     background-color: white;
 }
 
-.nav-slide__hamburger:hover {
+.intro-slide__hamburger:hover {
     background-color: grey;
 }

@@ -50,7 +50,7 @@ $( "body[data-page='QuestionsRechner']" ).ready(function() {
     // console.log("Number of Jobs to add: " + elements)
     let d = document.createElement("div")
     d.setAttribute("class", "form__grid")
-    for (let i=0; i < 4;i++) {
+    for (let i=0; i < 3;i++) {
       let f = document.createElement("input");
       f.setAttribute("class", "form__input");
       f.setAttribute("multiple", "multiple");

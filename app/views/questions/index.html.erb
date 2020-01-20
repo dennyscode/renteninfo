@@ -1,18 +1,22 @@
-<%= render 'shared/title', title: "Index" %>
+<div class="main_container">
+    <%= render 'shared/title', title: "Fragebogen Übersicht" %>
+    <div class="content_container">
+        <% @questions.each do |question| %>
+
+            <ul>
+                <li><%= question.rente_estimate %></li>
+                <li><%= question.rente_art %></li>
+                <li><%= question.rente_start %></li>
+                <li><%= question.rente_dauer %></li>
+                <li><%= question.rente_eink %></li>
+                <li><%= question.rente_reg %></li>
+                <li><%= question.rente_kinder %></li>
+                <li><%= question.rente_kinder_gebjahr %></li>
+                <li><%= question.rente_betrieb %></li>
+            </ul>
+
+        <% end %>
+    </div>
+</div>
 
 
-<% @questions.each do |question| %>
-
-    <ul>
-        <li><%= question.rente_estimate %></li>
-        <li><%= question.rente_art %></li>
-        <li><%= question.rente_start %></li>
-        <li><%= question.rente_dauer %></li>
-        <li><%= question.rente_eink %></li>
-        <li><%= question.rente_reg %></li>
-        <li><%= question.rente_kinder %></li>
-        <li><%= question.rente_kinder_gebjahr %></li>
-        <li><%= question.rente_betrieb %></li>
-    </ul>
-
-<% end %>

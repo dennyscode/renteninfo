@@ -1,41 +1,42 @@
-<%= render 'shared/title', title: "Ergebnis" %>
+<div class="main_container">
+    <%= render 'shared/title', title: "Ergebnis" %>
+    <div class="content_container">
+        <h2 class="tooltippy" data-tippy-content="Tooltip">Show</h2>
+        <ul>
+            <li>Durchschnittsentgeld (<%= Time.now.year %>):<%= @durchschnittsentgeltRV_2019 %></li>
+            <li>Estimate:<%= @question.rente_estimate %></li>
+            <li>Art:<%= @question.rente_art %></li>
+            <li>Start:<%= @question.rente_start %></li>
+            <li>Jobs:<%= @question.rente_jobs %></li>
+            <li>Dauer:<%= @question.rente_dauer %></li>
+            <li>Eink:<%= @question.rente_eink %></li>
+            <li>Reg:<%= @question.rente_reg %></li>
+            <li>Kinder:<%= @question.rente_kinder %></li>
+            <li>Kinder_Gebjahr:<%= @question.rente_kinder_gebjahr %></li>
+            <li>Betrieb:<%= @question.rente_betrieb %></li>
+            <li>Wunschalter:<%= @question.rente_wunschalter %></li>
+            <hr>
+            <% @question.rente_jobs.each.with_index do |val, index| %></li>
+                <li><%= index + 1 %>. Job:<%= val %></li>
+            <% end %>
+            <hr>
+        </ul>
+        <p>Hilfsvariable 1: <%= @hilfsvar1 %>  (rente_vwerwerbsjahre) </p>
+        <p>Hilfsvariable 2: <%= @hilfsvar2 %>  (rente_vreg)</p>
+        <p>Hilfsvariable 3: <%= @hilfsvar3 %> (rente_ventgeltpunkte)</p>
+        <p>Hilfsvariable 4: <%= @hilfsvar4 %> (rente_VBisZurRente )</p>
+        <p>Hilfsvariable 5: <%= @hilfsvar5 %> (rente_vAnpassung )</p>
+        <p>Hilfsvariable 6: <%= @hilfsvar6 %> (rente_vBenoetigt )</p>
+        <br>
+        <p>Rente = Erwerbspunkte (EP) * Rentenwert (RW) * Erwerbsjahre</p>
+        <p>(1/3) Formel für Rentenberechnung</p>
+        <p>Rente heute = VEntgeltpunkte*Vreg*VErwerbsjahre = <%= @rente_heute %></p>
+        <p>(2/3) Formel für Hochrechnung</p>
+        <p>Hochrechnung = Rente heute + VEntgeltpunkte*Vreg* VbiszurRente = <%= @rente_hochrechnung %></p>
+        <p>Hochrechnung mit Rentenanpassung= Rente heute + (VEntgeltpunkte * VAnpassung) = <%= @rente_hochrechnungMitAnpassung %></p>
+        <p>Fiktive Rente = VBenötigt*Vreg*VErwerbsjahre = <%= @rente_fiktiv  %></p>
+        <p>Notwendiges Gehalt = ((VBenötigt)*Jahresbrutto) = <%= @rente_notwendig %></p>
+        <p>Notwendige Jahre = (Vestimate/(VEntgeltpunkte* Vreg)) = <%= @rente_notwendigJahre %></p>
+    </div>
+</div>
 
-<h2 class="tooltippy" data-tippy-content="Tooltip">Show</h2>
-
-    <ul>
-        <li>Durchschnittsentgeld (<%= Time.now.year %>):<%= @durchschnittsentgeltRV_2019 %></li>
-        <li>Estimate:<%= @question.rente_estimate %></li>
-        <li>Art:<%= @question.rente_art %></li>
-        <li>Start:<%= @question.rente_start %></li>
-        <li>Jobs:<%= @question.rente_jobs %></li>
-        <li>Dauer:<%= @question.rente_dauer %></li>
-        <li>Eink:<%= @question.rente_eink %></li>
-        <li>Reg:<%= @question.rente_reg %></li>
-        <li>Kinder:<%= @question.rente_kinder %></li>
-        <li>Kinder_Gebjahr:<%= @question.rente_kinder_gebjahr %></li>
-        <li>Betrieb:<%= @question.rente_betrieb %></li>
-        <li>Wunschalter:<%= @question.rente_wunschalter %></li>
-        <hr>
-        <% @question.rente_jobs.each.with_index do |val, index| %></li>
-            <li><%= index + 1 %>. Job:<%= val %></li>
-        <% end %>
-        <hr>
-    </ul>
-
-<p>Hilfsvariable 1: <%= @hilfsvar1 %>  (rente_vwerwerbsjahre) </p>
-<p>Hilfsvariable 2: <%= @hilfsvar2 %>  (rente_vreg)</p>
-<p>Hilfsvariable 3: <%= @hilfsvar3 %> (rente_ventgeltpunkte)</p>
-<p>Hilfsvariable 4: <%= @hilfsvar4 %> (rente_VBisZurRente )</p>
-<p>Hilfsvariable 5: <%= @hilfsvar5 %> (rente_vAnpassung )</p>
-<p>Hilfsvariable 6: <%= @hilfsvar6 %> (rente_vBenoetigt )</p>
-
-<br>
-<p>Rente = Erwerbspunkte (EP) * Rentenwert (RW) * Erwerbsjahre</p>
-<p>(1/3) Formel für Rentenberechnung</p>
-<p>Rente heute = VEntgeltpunkte*Vreg*VErwerbsjahre = <%= @rente_heute %></p>
-<p>(2/3) Formel für Hochrechnung</p>
-<p>Hochrechnung = Rente heute + VEntgeltpunkte*Vreg* VbiszurRente = <%= @rente_hochrechnung %></p>
-<p>Hochrechnung mit Rentenanpassung= Rente heute + (VEntgeltpunkte * VAnpassung) = <%= @rente_hochrechnungMitAnpassung %></p>
-<p>Fiktive Rente = VBenötigt*Vreg*VErwerbsjahre = <%= @rente_fiktiv  %></p>
-<p>Notwendiges Gehalt = ((VBenötigt)*Jahresbrutto) = <%= @rente_notwendig %></p>
-<p>Notwendige Jahre = (Vestimate/(VEntgeltpunkte* Vreg)) = <%= @rente_notwendigJahre %></p>

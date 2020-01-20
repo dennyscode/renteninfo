@@ -5,21 +5,18 @@
     justify-content: space-between;
 }
 
-.intro__item {}
-
-.intro-slide {
-    height: 4em;
+.carousel {
+    background-color: $nav_col;
 }
-
 
 .carousel__text {
     width: 80%;
     margin: auto;
     text-align: center;
-    color: black;
     font-weight: 500;
     padding: 1em;
-    border: 1px solid black;
-    border-radius: .5em;
 }
 
+#carouselExampleControls {
+    top: -60px;
+}

@@ -1,9 +1,5 @@
 $( "body[data-page='QuestionsRechner']" ).ready(function() {
 
-    console.log("Testing before:")
-
-    console.log("Testing while:")
-
     let date = new Date();
     let calendar_nextbutton;
     let calendar_show_next_month;
@@ -31,8 +27,6 @@ $( "body[data-page='QuestionsRechner']" ).ready(function() {
         // output = new Date(output.setDate(input_date.getDate(0)));
         // return output;
         return new Date(input_date.getFullYear(), input_date.getMonth() +1,0);
-
-
     }
 
     let firstweekday;
@@ -65,6 +59,7 @@ $( "body[data-page='QuestionsRechner']" ).ready(function() {
         number_of_weeks =  Math.ceil((d1 + d2) / 7);
         return number_of_weeks;
     }
+
     let d1;
     let output;
     function first_calendar_week_of_month(input_date) {

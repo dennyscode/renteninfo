@@ -18,7 +18,8 @@
 
 
 // Areas:
-@import './areas/nav-slider';
+@import './areas/nav';
+@import './areas/intro-slider';
 @import './areas/sidebar';
 
 
@@ -30,6 +31,7 @@
 @import './modules/radio_buttons';
 
 // Components:
+@import './components/container';
 @import './components/rechner';
 @import './components/components';
 @import './components/form';
