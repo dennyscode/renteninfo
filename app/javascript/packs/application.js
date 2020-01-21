@@ -122,4 +122,36 @@ document.addEventListener("turbolinks:load", () => {
     //         }
     //     }
     // });
+
+
+    // Working on a function to set the footer (WIP)
+    // let screen_check = function() {
+    //   console.log("HAHA screen_check")
+    //   let main_func = function() {
+    //     let win = window,
+    //       doc = document,
+    //       body = document.body,
+    //       html = document.documentElement,
+    //       docElem = doc.documentElement,
+    //       body_tag = doc.getElementsByTagName('body')[0],
+    //       view_height = win.innerHeight|| docElem.clientHeight|| body_tag.clientHeight,
+    //       body_height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight )
+    //     console.log("View Height: " + view_height + "(" + window.innerHeight + " - " + docElem.clientHeight + " - " + body_tag.clientHeight + ")");
+    //     console.log("document.body.clientHeight: " + document.body.clientHeight);
+    //     console.log("window.innerHeight: " + window.innerHeight);
+    //   };
+    //   // main_func();
+    //   if ( window.innerHeight > document.body.clientHeight ) {
+    //     console.log("doesnt fit");
+    //     document.querySelector("footer").style.position = "absolute"; //sticky
+    //     document.querySelector("footer").style.bottom = "0";
+    //   }
+    //   else {
+    //     console.log("footer is down anyways")
+    //     document.querySelector("footer").style.position = "static";
+    //   }
+    // }
+    // var x = window.matchMedia("(min-height: " + document.body.clientHeight + "px)");
+    // screen_check();
+    // x.addListener(screen_check) // Attach listener function on state changes
 });

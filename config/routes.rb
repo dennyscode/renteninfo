@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users, skip: :all
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'mains#main'
   resources :posts
   resources :questions
-  root 'mains#main'
+  get 'impressum', to: 'mains#impressum'
+  post 'rechner', to: 'questions#create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'posts', to: 'posts#index'
-  post 'contact_sent', to: 'mains#contact_sent'
-  post 'mains/thank_you'
+  post 'mains/contact_sent'
+  get 'mains/thank_you'
   get 'rechner', to: 'questions#rechner'
   get 'index', to: 'questions#index'
   get 'contact', to: 'mains#contact'
-  get 'impressum', to: 'mains#impressum'
   get 'more', to: 'mains#more'
-  post 'rechner', to: 'questions#create'
   get 'team', to: 'mains#team'
 end
