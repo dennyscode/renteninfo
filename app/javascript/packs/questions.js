@@ -46,7 +46,7 @@ $( "body[data-page='QuestionsRechner']" ).ready(function() {
   // Add Jobs on click
   function addJob(input) {
     const c = document.querySelector(".js-addJobhistory")
-    let elements = input.parentNode.children[2].children.length
+    let elements = input.parentNode.children[1].children.length
     // console.log("Number of Jobs to add: " + elements)
     let d = document.createElement("div")
     d.setAttribute("class", "form__grid")
@@ -82,7 +82,7 @@ $( "body[data-page='QuestionsRechner']" ).ready(function() {
         d.appendChild(remove_button);
       }
     }
-    c.parentNode.children[2].appendChild(d)
+    c.parentNode.children[1].appendChild(d)
   }
   document.querySelector(".js-addJobhistory").addEventListener("click", function() {addJob(this)})
 

@@ -23,9 +23,6 @@ require("@rails/actiontext")
 // require("@fortawesome/fontawesome-free/js/all")
 import 'trix';
 import 'trix/dist/trix.js';
-import tippy from 'tippy.js';
-import 'tippy.js/dist/tippy.css';
-import 'tippy.js/dist/backdrop.css';
 import axios from 'axios';
 import chartjs from 'chart.js/dist/Chart.bundle';
 // import aironnecalendar from 'aironne-calendar';
@@ -48,11 +45,12 @@ console.log($("body"));
 require.context('../images', true);
 let works;
 // require('../javascript/javascript.js.erb');
-require('../javascript/questions.js');
-require('../javascript/tool.js');
-require('../javascript/javascript.js');
-require('../packs/rechner.js');
-// require('../javascript/vendors/tippy');
+import '../javascript/questions.js';
+import '../javascript/tool.js';
+import '../javascript/javascript.js';
+import '../packs/rechner.js';
+// import '../javascript/vendors/tippy';
+import '../javascript/active_tooltips';
 
 
 
@@ -64,9 +62,7 @@ import '../stylesheets/application.scss';
 import { string } from 'postcss-selector-parser';
 
 document.addEventListener("turbolinks:load", () => {
-  tippy('#singleElement', {
-    content: 'Tooltip',
-  });
+
   console.log('Hello World from Webpacker');
   function classname_toggler(active_name, inactive_element) {
     // Inactive Element using: 'this'
@@ -89,41 +85,41 @@ document.addEventListener("turbolinks:load", () => {
 
     // ChartJS
 
-    var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
+    // var ctx = document.getElementById('myChart').getContext('2d');
+    // var myChart = new Chart(ctx, {
+    //     type: 'bar',
+    //     data: {
+    //         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    //         datasets: [{
+    //             label: '# of Votes',
+    //             data: [12, 19, 3, 5, 2, 3],
+    //             backgroundColor: [
+    //                 'rgba(255, 99, 132, 0.2)',
+    //                 'rgba(54, 162, 235, 0.2)',
+    //                 'rgba(255, 206, 86, 0.2)',
+    //                 'rgba(75, 192, 192, 0.2)',
+    //                 'rgba(153, 102, 255, 0.2)',
+    //                 'rgba(255, 159, 64, 0.2)'
+    //             ],
+    //             borderColor: [
+    //                 'rgba(255, 99, 132, 1)',
+    //                 'rgba(54, 162, 235, 1)',
+    //                 'rgba(255, 206, 86, 1)',
+    //                 'rgba(75, 192, 192, 1)',
+    //                 'rgba(153, 102, 255, 1)',
+    //                 'rgba(255, 159, 64, 1)'
+    //             ],
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             yAxes: [{
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }]
+    //         }
+    //     }
+    // });
 });
