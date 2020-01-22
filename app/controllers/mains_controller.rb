@@ -1,6 +1,8 @@
 class MainsController < ApplicationController
+  include MainsHelper
 
     def main
+      @test = image_url_from_active_storage()
     end
 
     def impressum

@@ -8,6 +8,7 @@ gem 'actiontext'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 gem "figaro"
+gem 'rack', '~> 2.1', '>= 2.1.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.4'
 # Use SCSS for stylesheets
@@ -27,6 +28,7 @@ gem 'capistrano-rbenv', '~> 2.1'
 gem 'bcrypt', '~> 3.1.7'
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
+gem "mini_magick"
 gem 'log4r', '~> 1.1', '>= 1.1.10'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '~> 1.4', '>= 1.4.5'
