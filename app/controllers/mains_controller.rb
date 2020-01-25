@@ -18,11 +18,7 @@ class MainsController < ApplicationController
       @name = params[:name]
       @email = params[:email]
       @message = params[:message]
-      ActionMailer::Base.mail(from: 'your-email@example.com',
-          to: 'sander.bewerbung@gmx.de',
-          subject: "A new contact form message from #{@name}",
-          body: @message).deliver_now
-      flash[:success] = "Die Kontaktmail wurde erfolgreich versandt. Wir werden uns zeitnah bei Ihnen melden."
+      UserMailer.with(user: @user, email: @email, message: @message).welcome_email.deliver_later
       redirect_to mains_thank_you_path
     end
 
