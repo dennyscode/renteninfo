@@ -1,7 +1,7 @@
 <nav class="mynav">
     <div class="mynav_header">
         <div>
-            <%= link_to image_pack_tag("FinalIconTransparent.png", class: "mynav__image", border: 0), {action: 'main', controller: 'mains'} %>
+            <%= link_to image_pack_tag("FinalIconTransparent.png", class: "mynav__image", border: 0), root_path %>
         </div>
         <div class="mynav-item">
             <%= link_to 'Rentenrechner', rechner_path, :class => 'mynav__link' %>
@@ -9,7 +9,21 @@
         <div class="mynav-item">
             <%= link_to 'Mehr erfahren', rechner_path, :class => 'mynav__link' %>
         </div>
-        <div class="mynav-box"></div>
+        <div class="mynav-box"><% if user_signed_in? %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %>´s Profile<span class="caret"></span></a>
+          <ul>
+            <li><%= link_to "View your profile", user_path(current_user) %></li>
+            <li><%= link_to "Edit your profile", "#" %></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </li>
+        <% else %>
+          <li><%= link_to "Log In", new_user_session_path %></li>
+        <% end %></div>
     </div>
 
 </nav>

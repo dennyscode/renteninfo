@@ -1,0 +1,11 @@
+<><div class="main_container">
+    <%= render 'shared/title', title: "Profil anzeigen" %>
+    <div class="content_container">
+        <ul>
+            <li>Email: <%= current_user.email %></li>
+            <li>Nickname:<%= current_user.nickname %></li>
+            <li>Vorname:<%= current_user.firstname %></li>
+            <li>Nachname:<%= current_user.lastname %></li>
+        </ul>
+    </div>
+</div>
