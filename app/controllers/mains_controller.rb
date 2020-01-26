@@ -18,7 +18,7 @@ class MainsController < ApplicationController
       @name = params[:name]
       @email = params[:email]
       @message = params[:message]
-      UserMailer.with(user: @user, email: @email, message: @message).welcome_email.deliver_now
+      UserMailer.with(name: @name, email: @email, message: @message).welcome_email.deliver_now
       redirect_to mains_thank_you_path
     end
 

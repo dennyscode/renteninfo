@@ -35,10 +35,10 @@ $( "body[data-page='QuestionsRechner']" ).ready(function() {
     let ele
     counter = document.querySelectorAll(".js-checkboxes").length
     for (i = 0; i < counter; i++) {
-      _counter = document.querySelectorAll(".js-checkboxes")[i].children[1].children.length
+      _counter = document.querySelectorAll(".js-checkboxes")[i].children[2].children.length
       for (_i = 0; _i < _counter; _i++) {
-        ele = document.querySelectorAll(".js-checkboxes")[i].children[1].children[_i]
-        ele.addEventListener("click", function() {checkboxSelection(this)})
+        ele = document.querySelectorAll(".js-checkboxes")[i].children[2].children[_i]
+        ele.addEventListener("click", function() {checkboxSelection(this);console.log("CHECKBOX_TEST!")})
       }
     }
   }
