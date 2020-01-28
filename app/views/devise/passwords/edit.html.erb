@@ -1,0 +1,38 @@
+<div class="main_container">
+  <%= render 'shared/title', title: "Passwort ändern" %>
+    <div class="content_container">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }, class: "form") do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <%= f.hidden_field :reset_password_token %>
+
+        <div class="form__item">
+          <%= f.label :email, "E-Mail", :class=> "form__label" %>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__email" %>
+          <div class="form__inputs">
+            <%= f.email_field :email, :class=>"form__input", autofocus: true, autocomplete: "email" %>
+          </div>
+        </div>
+
+        <div class="form__item">
+          <%= f.label :password, "Passwort-Eingabe", :class=> "form__label" %>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__password" %>
+          <div class="form__inputs">
+            <%= f.password_field :password, :class=>"form__input", :id=>"password_input", autofocus: true, autocomplete: "new-password" %>
+          </div>
+        </div>
+
+
+        <div class="form__item">
+          <%= f.label :password_confirmation, "Bestätigen Sie das Passwort", :class=> "form__label" %>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__password_confirmation" %>
+          <div class="form__inputs">
+            <%= f.password_field :password_confirmation, :class=>"form__input", :id=>"password_confirmation_input", autocomplete: "new-password" %>
+          </div>
+        </div>
+        <hr class="break">
+
+        <%= f.submit "Passwort ändern", :class=> "form__submit button" %>
+      <% end %>
+      <%= render "users/shared/links" %>
+  </div>
+</div>

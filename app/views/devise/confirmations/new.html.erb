@@ -1,0 +1,32 @@
+<div class="main_container">
+  <%= render 'shared/title', title: "Resend confirmation instructions" %>
+    <div class="content_container">
+      <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }, class: "form") do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="form__item">
+          <%= f.label :email, "E-Mail", :class=> "form__label" %>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__email" %>
+          <div class="form__inputs">
+            <%= f.email_field :email, :class=>"form__input", autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+          </div>
+        </div>
+
+        <hr class="break">
+
+        <%= f.submit "Resend confirmation instructions", :class=> "form__submit button" %>
+      <% end %>
+      <%= render "users/shared/links" %>
+  </div>
+</div>
+
+
+
+
+
+
+  <div class="actions">
+    <%= f.submit "Resend confirmation instructions" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

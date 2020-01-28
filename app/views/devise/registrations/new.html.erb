@@ -1,0 +1,76 @@
+<div class="main_container">
+    <%= render 'shared/title', title: "Konto erstellen" %>
+    <div class="content_container">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "form") do |f| %>
+
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="form__item">
+          <%= f.label :email, "E-Mail", :class=> "form__label" %>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__email" %>
+          <div class="form__inputs">
+            <%= f.email_field :email, :class=>"form__input", :id=>"email_input", autofocus: true, autocomplete: "email" %>
+          </div>
+        </div>
+
+        <hr class="break">
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <hr class="break">
+        <% end %>
+
+        <div class="form__item">
+          <%= f.label :password, "Passwort-Eingabe ", :class=> "form__label" %>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__password" %>
+          <div class="form__inputs">
+            <%= f.password_field :password, :class=>"form__input", :id=>"password_input", autocomplete: "new-password" %>
+              <% if @minimum_password_length %>
+                <br />
+                <em><%= @minimum_password_length %> characters minimum</em>
+              <% end %>
+          </div>
+          <i>(leave blank if you don't want to change it)</i><br />
+        </div>
+
+        <hr class="break">
+
+        <div class="form__item">
+          <%= f.label :password_confirmation, "E-Mail", :class=> "form__label" %>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__password" %>
+          <div class="form__inputs">
+            <%= f.password_field :password_confirmation, :class=>"form__input", :id=>"password_confirmation_input", autofocus: true, autocomplete: "new-password" %>
+          </div>
+        </div>
+
+        <hr class="break">
+
+        <div class="actions">
+          <%= f.submit "Änderungen übernehmen", :class=> "form__submit button" %>
+        </div>
+      <% end %>
+
+      <h3>Cancel my account</h3>
+
+      <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+      <%= link_to "Back", :back %>
+
+      <%= render "users/shared/links" %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

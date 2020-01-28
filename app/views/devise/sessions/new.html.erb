@@ -1,0 +1,44 @@
+<div class="main_container">
+    <%= render 'shared/title', title: "Login" %>
+    <div class="content_container">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form") do |f| %>
+
+        <div class="form__item">
+          <%= f.label :email, "E-Mail", :class=> "form__label" %>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__email" %>
+          <div class="form__inputs">
+            <%= f.email_field :email, :class=>"form__input", :id=>"email_input", autofocus: true, autocomplete: "email" %>
+          </div>
+        </div>
+
+        <hr class="break">
+
+
+        <div class="form__item">
+          <%= f.label :password, "Passwort-Eingabe", :class=> "form__label" %>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__password" %>
+          <div class="form__inputs">
+            <%= f.password_field :password, :class=>"form__input", :id=>"password_input", autocomplete: "current-password" %>
+          </div>
+        </div>
+
+        <hr class="break">
+
+
+        <% if devise_mapping.rememberable? %>
+          <div class="form__item">
+            <%= f.label :remember_me, "Merken?" %>
+            <%= render 'shared/icons/icon-help', tooltip: "icon-help__remember_me" %>
+            <div class="form__inputs">
+              <%= f.check_box :remember_me, :class=>"form__input", :id=>"remember_me_input" %>
+            </div>
+          </div>
+        <% end %>
+
+        <hr class="break">
+        <%= f.submit "Login", :class=> "form__submit button" %>
+      <% end %>
+      <%= render "users/shared/links" %>
+  </div>
+</div>
+
