@@ -1,7 +1,11 @@
 class MainsController < ApplicationController
   include MainsHelper
-
+  include Rails.application.routes.url_helpers
     def main
+      @posts = Post.all.page(params[:page]).per(3)
+    end
+
+    def info
     end
 
     def impressum

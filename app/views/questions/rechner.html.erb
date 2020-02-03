@@ -6,8 +6,10 @@
   <div class="content_container">
     <%= form_with(model: @question, url: questions_path(@question), class: "form") do |f| %>
       <div class="form__item">
-        <%= f.label :rente_estimate, "Wie hoch schätzen Sie Ihren monatlichen Bedarf als Rentner/in (Wohnungskosten, Versorgung, etc.)?", :class=> "form__label" %>
-        <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_estimate" %>
+        <div class="form_itembox">
+          <%= f.label :rente_estimate, "Wie hoch schätzen Sie Ihren monatlichen Bedarf als Rentner/in (Wohnungskosten, Versorgung, etc.)?", :class=> "form__label" %>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_estimate" %>
+        </div>
         <div class="form__inputs">
           <%= f.text_field :rente_estimate, :class=>"form__input", :id=>"rente_estimate_input" %>
           <input type="range" min="100" max="5000" step="50" value="1000" class="slider" id="slider_r_estimate">
@@ -15,8 +17,10 @@
       </div>
       <hr class="break">
       <div class="form__item">
-        <p class="form__label">Welche Art von Beschäftigungsverhältnis liegt vor?</p>
-        <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_art" %>
+        <div class="form_itembox">
+          <p class="form__label">Welche Art von Beschäftigungsverhältnis liegt vor?</p>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_art" %>
+        </div>
         <div class="form__inputs form__checkboxes">
           <%= f.label :rente_art, "abhängig beschäftigt", :value => "0", :class=> "checkbox__label" do %>abhängig beschäftigt
             <%= f.radio_button :rente_art, "abhängig beschäftigt", :checked => true, :class => "radiobutton__input" %>
@@ -34,9 +38,10 @@
       </div>
 
       <hr class="break">  <div class="form__item">
-
-        <p class="form__label">Zahlen Sie aus den Einkünften aus selbstständiger Tätigkeit Beiträge in die private oder gesetzliche Rentenversicherung?</p>
-        <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_zusatz" %>
+        <div class="form_itembox">
+          <p class="form__label">Zahlen Sie aus den Einkünften aus selbstständiger Tätigkeit Beiträge in die private oder gesetzliche Rentenversicherung?</p>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_zusatz" %>
+        </div>
         <div class="form__inputs form__checkboxes">
           <%= f.label :rente_zusatz, "Ich zahle keine Beiträge", :value => "0", :class=> "checkbox__label" do %>„Ich zahle keine Beiträge“
               <%= f.radio_button :rente_zusatz, "Ich zahle keine Beiträge", :checked => true, :class => "radiobutton__input" %>
@@ -62,8 +67,10 @@
       <hr class="break">
 
       <div class="form__item">
-        <%= f.label :rente_start, "In welchem Jahr haben Sie das erste Mal gearbeitet?", :class=> "form__label" %>
-        <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_start" %>
+        <div class="form_itembox">
+          <%= f.label :rente_start, "In welchem Jahr haben Sie das erste Mal gearbeitet?", :class=> "form__label" %>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_start" %>
+        </div>
         <div class="form__inputs">
           <%= f.text_field :rente_start, :class=> "form__input" %>
         </div>
@@ -72,8 +79,10 @@
       <hr class="break">
 
       <div class="form__item js-checkboxes">
-        <p class="form__label">Haben Sie vor diesem Job schon anderweitig in einem abhängigen Beschäftigungsverhältnis gestanden?</p>
-        <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_uebergang" %>
+        <div class="form_itembox">
+          <p class="form__label">Haben Sie vor diesem Job schon anderweitig in einem abhängigen Beschäftigungsverhältnis gestanden?</p>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_uebergang" %>
+        </div>
         <div class="form__inputs form__checkboxes">
           <label class="checkbox__label" for="rente_uebergang_ja">Ja
             <input class="radiobutton__input" type="radio" value="1">
@@ -91,8 +100,12 @@
       </div>
 
       <div class="form__item" id="rente_jobs">
-        <%= f.label :rente_jobs, "Für die Genauigkeit der Rentenberechnung ist es hilfreich Ihre Erwerbshistorie nachzuzeichnen. 	Bitte füllen Sie aus wie lange Sie zu welchen Bedingungen gearbeitet haben.", :class=> "form__label" %>
-          <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_jobs" %>
+        <div class="form_itembox">
+          <div class="form_itembox">
+            <%= f.label :rente_jobs, "Für die Genauigkeit der Rentenberechnung ist es hilfreich Ihre Erwerbshistorie nachzuzeichnen. 	Bitte füllen Sie aus wie lange Sie zu welchen Bedingungen gearbeitet haben.", :class=> "form__label" %>
+            <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_jobs" %>
+          </div>
+        </div>
           <div class="form__box" id="rente__jobs">
             <div class="form__grid">
                 <%= f.text_field :rente_jobs, multiple: true, :class=> "form__input", :placeholder => "Beginn", name: "rente_jobs[0][beginn]" %>
@@ -110,8 +123,10 @@
 
       <hr class="break">
         <div class="form__item">
-          <%= f.label :rente_dauer, "Welches Geburtsjahr?", :class=> "form__label" %>
-          <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_dauer" %>
+          <div class="form_itembox">
+            <%= f.label :rente_dauer, "Welches Geburtsjahr?", :class=> "form__label" %>
+            <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_dauer" %>
+          </div>
           <div class="form__inputs">
             <%= f.text_field :rente_dauer, :class=> "form__input" %>
           </div>
@@ -120,8 +135,10 @@
       <hr class="break">
 
       <div class="form__item">
-        <%= f.label :rente_eink, "Wie hoch ist ihr Jahresbruttogehalt?", :class=> "form__label" %>
-        <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_eink" %>
+        <div class="form_itembox">
+          <%= f.label :rente_eink, "Wie hoch ist ihr Jahresbruttogehalt?", :class=> "form__label" %>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_eink" %>
+        </div>
         <div class="form__inputs">
           <%= f.text_field :rente_eink, :class=> "form__input" %>
         </div>
@@ -130,8 +147,10 @@
       <hr class="break">
 
       <div class="form__item">
-        <p class="form__label">Leben Sie in Ost- oder Westdeutschland?</p>
-        <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_reg" %>
+        <div class="form_itembox">
+          <p class="form__label">Leben Sie in Ost- oder Westdeutschland?</p>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_reg" %>
+        </div>
         <div class="form__inputs form__checkboxes">
           <%= f.label :rente_reg, "Ostdeutschland", :value => "31.89", :class=> "checkbox__label" do %>Ostdeutschland
               <%= f.radio_button :rente_reg, "Ostdeutschland", :checked => true, :class => "radiobutton__input" %>
@@ -151,8 +170,10 @@
       <hr class="break">
 
       <div class="form__item js-checkboxes">
-        <p class="form__label">Haben Sie Kinder?</p>
-        <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_kinder__nachwuchs" %>
+        <div class="form_itembox">
+          <p class="form__label">Haben Sie Kinder?</p>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_kinder__nachwuchs" %>
+        </div>
         <div class="form__inputs form__checkboxes">
           <label class="checkbox__label" for="rente_kinder_ja">Ja
             <input class="radiobutton__input" type="radio" value="1">
@@ -171,8 +192,10 @@
 
 
       <div class="form__item" id="rente__kinder">
-        <%= f.label :rente_kinder, "Wie viele Kinder haben Sie?", :class=> "form__label" %>
-        <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_kinder" %>
+        <div class="form_itembox">
+          <%= f.label :rente_kinder, "Wie viele Kinder haben Sie?", :class=> "form__label" %>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_kinder" %>
+        </div>
         <div class="form__inputs">
           <%= f.text_field :rente_kinder, :class=> "form__input", :value=> "0" %>
           <input type="range" min="1" max="5" step="1" value="1" class="slider" id="slider_r_kinder">
@@ -189,8 +212,10 @@
       <hr class="break">
 
       <div class="form__item">
-        <p class="form__label">Haben Sie sich für eine betriebliche Rente qualifiziert (z.B. VBL)?</p>
-        <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_betrieb" %>
+        <div class="form_itembox">
+          <p class="form__label">Haben Sie sich für eine betriebliche Rente qualifiziert (z.B. VBL)?</p>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_betrieb" %>
+        </div>
         <div class="form__inputs form__checkboxes">
           <%= f.label :rente_betrieb, "Ja", :value => "1", :class=> "checkbox__label" do %>Ja
             <%= f.radio_button :rente_betrieb, "Ja", :checked => true, :class => "radiobutton__input" %>
@@ -210,8 +235,10 @@
       <hr class="break">
 
       <div class="form__item">
-        <%= f.label :rente_wunschalter, "In welchem Alter möchten Sie in Rente gehen?", :class=> "form__label" %>
-        <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_wunschalter" %>
+        <div class="form_itembox">
+          <%= f.label :rente_wunschalter, "In welchem Alter möchten Sie in Rente gehen?", :class=> "form__label" %>
+          <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_wunschalter" %>
+        </div>
         <div class="form__inputs">
           <%= f.text_field :rente_wunschalter, :class=> "form__input" %>
         </div>

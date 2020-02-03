@@ -8,6 +8,7 @@ gem 'actiontext'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 gem "figaro"
+gem 'kaminari'
 gem 'rack', '~> 2.1', '>= 2.1.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.4'

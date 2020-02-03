@@ -1,0 +1,20 @@
+      <%= render 'shared/title', title: "Die neuesten Beiträge" %>
+
+      <div class="posts_teaser">
+        <% @posts.each do |post| %>
+            <%= link_to(post_path(post), class: "posts_teaser__item") do %>
+                <div class="posts_teaser__box">
+                    <p><%= post.title %><br></p>
+                    <p><%= truncate(strip_tags(post.content.body.to_s), length: 80) %></p>
+                </div>
+                <div class="posts_teaser__box">
+                    <% post.content.embeds.each_with_index do |embeds, i| %>
+                        <% if i === 0 %> 
+                            <%= image_tag(embeds, class: "posts_teaser__image", size: "#{embeds.metadata[:width] == nil ? (ActiveStorage::Analyzer::ImageAnalyzer.new(embeds).metadata[:width]) : embeds.metadata[:width]}x#{embeds.metadata[:height] == nil ? (ActiveStorage::Analyzer::ImageAnalyzer.new(embeds).metadata[:height]) : embeds.metadata[:height]}") %><br>
+                        <% end %>
+                    <% end %>
+                </div>
+                <hr>
+            <% end %>
+        <% end %>
+      </div>

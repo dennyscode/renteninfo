@@ -8,6 +8,20 @@
   }
 }
 
+.form__input[type="text"], textarea[class="form__input"] {
+  border: 1px solid #eeeeee;
+  border-radius: .2em;
+}
+.form__input[type="text"]:hover {
+  border: 2px solid #eee;
+
+}
+
+.form__input[type="text"]:focus {
+  border: 2px solid #ccc;
+  outline-color:#ccc;
+}
+
 .form__inputs {
   @include md {
     width: 50%;
@@ -26,6 +40,11 @@
   }
 }
 
+.form_itembox {
+  display: flex;
+  width: 50%;
+}
+
 .form__box {
   display: flex;
   flex-direction: column;
@@ -33,7 +52,6 @@
 
 .form__label {
   @include md {
-    width: 50%;
   }
 }
 

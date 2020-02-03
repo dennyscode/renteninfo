@@ -1,0 +1,25 @@
+
+.posts_teaser {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    text-decoration: none;
+}
+
+.posts_teaser__item {
+    border-top: 1px solid $sub_col;
+    padding: 1em;
+    color: $text_main;
+    display: flex;
+    flex-direction: row;
+}
+
+.posts_teaser__box, {
+    width: 50%;
+    padding: .5em;
+}
+
+.posts_teaser__image {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,7 +1,7 @@
 $( "body[data-page='QuestionsRechner']" ).ready(function() {
   // On Checkbox-Selection deactivate other Checkboxes
   function checkboxSelection (input) {
-    //console.log(input.parentElement)
+    console.log(input.parentElement)
     let ele
     let counter = input.parentNode.children.length
     for ( let i = 0; i < counter; i++) {
@@ -35,9 +35,9 @@ $( "body[data-page='QuestionsRechner']" ).ready(function() {
     let ele
     counter = document.querySelectorAll(".js-checkboxes").length
     for (i = 0; i < counter; i++) {
-      _counter = document.querySelectorAll(".js-checkboxes")[i].children[2].children.length
+      _counter = document.querySelectorAll(".js-checkboxes")[i].children[1].children.length
       for (_i = 0; _i < _counter; _i++) {
-        ele = document.querySelectorAll(".js-checkboxes")[i].children[2].children[_i]
+        ele = document.querySelectorAll(".js-checkboxes")[i].children[1].children[_i]
         ele.addEventListener("click", function() {checkboxSelection(this);console.log("CHECKBOX_TEST!")})
       }
     }
@@ -45,9 +45,10 @@ $( "body[data-page='QuestionsRechner']" ).ready(function() {
   checkboxEventAdder()
   // Add Jobs on click
   function addJob(input) {
+    console.log(input);
     const c = document.querySelector(".js-addJobhistory")
     let elements = input.parentNode.children[1].children.length
-    // console.log("Number of Jobs to add: " + elements)
+    console.log("Number of Jobs to add: " + elements)
     let d = document.createElement("div")
     d.setAttribute("class", "form__grid")
     for (let i=0; i < 3;i++) {

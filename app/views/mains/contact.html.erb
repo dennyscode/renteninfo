@@ -5,23 +5,29 @@
   <div class="content_container">
     <%= form_with(url:"/mains/contact_sent", method: "post", local: true, class: "form") do |f| %>
       <div class="form__item">
-        <%= f.label :name, "Name", :class=> "form__label" %>
+        <div class="form_itembox">
+          <%= f.label :name, "Name", :class=> "form__label" %>
+        </div>
         <div class="form__inputs">
           <%= f.text_field :name, :class=>"form__input", placeholder: "Name" %>
         </div>
       </div>
       <hr class="break">
       <div class="form__item">
-        <%= f.label :email, "E-Mail Adresse", :class=> "form__label" %>
+        <div class="form_itembox">
+          <%= f.label :email, "E-Mail Adresse", :class=> "form__label" %>
+        </div>
         <div class="form__inputs">
           <%= f.text_field :email, :class=>"form__input", placeholder: "E-Mail Adresse" %>
         </div>
       </div>
       <hr class="break">
       <div class="form__item">
-        <%= f.label :message, "Ihre Nachricht", :class=> "form__label" %>
+        <div class="form_itembox">
+          <%= f.label :message, "Ihre Nachricht", :class=> "form__label" %>
+        </div>
         <div class="form__inputs">
-          <%= f.text_field :message, :class=>"form__input", placeholder: "Ihre Nachricht" %>
+          <%= f.text_area :message, :class=>"form__input", placeholder: "Ihre Nachricht" %>
         </div>
       </div>
       <hr class="break">

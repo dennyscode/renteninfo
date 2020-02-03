@@ -4,19 +4,7 @@
 //     -ms-appearance: checkbox;     /* not currently supported */
 //   }
 
-.form__input[type="text"] {
-  border: 1px solid #eee;
-  border-radius: .2em;
-}
-.form__input[type="text"]:hover {
-  border: 2px solid #eee;
 
-}
-
-.form__input[type="text"]:focus {
-  border: 2px solid #ccc;
-  outline-color:#ccc;
-}
 .checkbox__label {
   margin: 0 1em;
 }
