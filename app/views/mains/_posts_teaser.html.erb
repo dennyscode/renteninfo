@@ -4,8 +4,8 @@
         <% @posts.each do |post| %>
             <%= link_to(post_path(post), class: "posts_teaser__item") do %>
                 <div class="posts_teaser__box">
-                    <p><%= post.title %><br></p>
-                    <p><%= truncate(strip_tags(post.content.body.to_s), length: 80) %></p>
+                    <p><%= post.title %></p><br>
+                    <p><%= truncate(post.preview, length: 80) %></p><br>
                 </div>
                 <div class="posts_teaser__box">
                     <% post.content.embeds.each_with_index do |embeds, i| %>
