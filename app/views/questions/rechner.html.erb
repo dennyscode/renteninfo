@@ -99,11 +99,14 @@
         </div>
       </div>
 
-      <div class="form__item" id="rente_jobs">
-        <div class="form_itembox">
-          <div class="form_itembox">
-            <%= f.label :rente_jobs, "Für die Genauigkeit der Rentenberechnung ist es hilfreich Ihre Erwerbshistorie nachzuzeichnen. 	Bitte füllen Sie aus wie lange Sie zu welchen Bedingungen gearbeitet haben.", :class=> "form__label" %>
+      <div class="form__item form__item--column" id="rente_jobs">
+        <div>
+          <%= f.label :rente_jobs, :class=> "form__label" do %>
+            Für die Genauigkeit der Rentenberechnung ist es hilfreich Ihre Erwerbshistorie nachzuzeichnen. 	Bitte füllen Sie aus wie lange Sie zu welchen Bedingungen gearbeitet haben.
             <%= render 'shared/icons/icon-help', tooltip: "icon-help__rente_jobs" %>
+          <% end %>
+          <div class="form_itembox">
+            
           </div>
         </div>
           <div class="form__box" id="rente__jobs">

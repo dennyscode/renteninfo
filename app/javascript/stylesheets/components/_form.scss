@@ -36,8 +36,12 @@
   @include md {
     flex-direction: row;
     width: 100%;
-    justify-content: center;
+    justify-content: space-between;
   }
+}
+
+.form__item--column {
+  flex-direction: column;
 }
 
 .form_itembox {
@@ -73,7 +77,8 @@
 .form__grid {
   display: grid;
   // grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr 50px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   // grid-template-columns: 25% 25% 25% 25%;
   width: 100%;
+  margin-bottom: .5em;
 }
