@@ -7,6 +7,8 @@
         <strong>Title:</strong>
         <%= @post.title %>
         <%= @post.content %>
+        <%= url_for(@post.image.attachment())  %>
+        <%= image_tag(url_for(@post.image.attachment()))  %>
       </p>
     </div>
     <%= link_to 'Edit', edit_post_path(@post) %> |

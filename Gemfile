@@ -9,7 +9,7 @@ gem 'actiontext'
 gem 'pg', '>= 0.18', '< 2.0'
 gem "figaro"
 gem 'kaminari'
-gem 'rack', '~> 2.1', '>= 2.1.1'
+gem 'rack', '~> 2.0.8'
 # Use Puma as the app server
 gem 'puma', '~> 3.4'
 gem 'sendgrid-ruby'

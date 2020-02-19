@@ -16,6 +16,14 @@
       <%= form.text_field :title %>
     </div>
 
+
+    <div class="field">
+      <%= form.label :image %>
+      <%= form.file_field :image, direct_upload: true %>
+    </div>
+
+
+
     <div class="field">
       <%= form.label :preview %>
       <%= form.text_field :preview %>

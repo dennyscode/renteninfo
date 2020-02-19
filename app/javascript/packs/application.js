@@ -45,10 +45,11 @@ console.log($("body"));
 require.context('../images', true);
 let works;
 // require('../javascript/javascript.js.erb');
-import '../javascript/questions.js';
-import '../javascript/tool.js';
-import '../javascript/javascript.js';
-import '../packs/rechner.js';
+import '../javascript/questions';
+import '../javascript/tool';
+import '../javascript/javascript';
+import '../packs/rechner';
+import '../packs/direct_upload';
 // import '../javascript/vendors/tippy';
 import '../javascript/active_tooltips';
 
