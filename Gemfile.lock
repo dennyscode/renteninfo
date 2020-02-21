@@ -107,6 +107,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.7.5)
     erubi (1.9.0)
     ffi (1.12.2)
     figaro (1.1.1)
@@ -163,6 +164,8 @@ GEM
     public_suffix (4.0.3)
     puma (3.12.2)
     rack (2.0.9)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -276,6 +279,7 @@ DEPENDENCIES
   capistrano-rbenv (~> 2.1)
   capybara (>= 2.15)
   devise (>= 4.7.1)
+  dotenv (~> 2.7, >= 2.7.5)
   figaro
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
@@ -286,6 +290,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.4)
   rack (~> 2.0.8)
+  rack-cors
   rails (~> 6.0.1)
   sassc
   sassc-rails

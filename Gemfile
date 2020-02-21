@@ -30,13 +30,17 @@ gem 'capistrano-rbenv', '~> 2.1'
 gem 'bcrypt', '~> 3.1.7'
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
+gem 'rack-cors'
 gem "mini_magick"
 gem 'log4r', '~> 1.1', '>= 1.1.10'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '~> 1.4', '>= 1.4.5'
 gem 'sassc', require: false
 gem "sassc-rails"
+gem 'dotenv', '~> 2.7', '>= 2.7.5'
+# gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
 gem "aws-sdk-s3", require: false
+
 gem "devise", ">= 4.7.1"
 
 group :development, :test do
