@@ -1,4 +1,9 @@
 require 'aws-sdk-s3'
 
-s3 = Aws::S3::Resource.new(region: "eu-central-1", credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY']))
-bucket = s3.bucket(ENV['AWS_BUCKET'])
+# s3 = Aws::S3::Resource.new(region: "eu-central-1", credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY']))
+# bucket = s3.bucket(ENV['AWS_BUCKET'])
+# bucket.objects.each do |obj|
+#     puts obj.key
+#   end
+
+# puts "=> AWS-S3-BUCKET CONNECTION JUST STARTED..."

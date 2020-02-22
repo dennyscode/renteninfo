@@ -30,3 +30,5 @@ RUN apt-get remove cmdtest -y
 RUN yarn --version
 
 RUN yarn install
+
+RUN bundle update
