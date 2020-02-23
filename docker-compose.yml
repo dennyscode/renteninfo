@@ -1,18 +1,22 @@
 version: '3'
 services:
     db:
-        image: postgres
+        image: postgres:latest
+        env_file: .env
         volumes:
             - postgres:/var/lib/postgresql/data
+        ports:
+            - '5432'  
     web:
         build: .
         command: bundle exec rails s -p 3000 -b '0.0.0.0'
+        env_file: .env
         volumes:
             - .:/renteninfo
         ports:
-            - "3000:3000"
+            - "3000:3001"
         depends_on:
             - db
 volumes:
     postgres:
-        external: true
+        external: false
