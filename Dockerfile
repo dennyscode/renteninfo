@@ -32,3 +32,5 @@ RUN yarn --version
 RUN yarn install
 
 RUN bundle update
+
+RUN yarn install --check-files

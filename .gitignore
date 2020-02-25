@@ -27,6 +27,7 @@
 /public/packs-test
 /node_modules
 /yarn-error.log
+.devcontainer
 yarn-debug.log*
 .yarn-integrity
 .env

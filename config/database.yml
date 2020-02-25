@@ -17,13 +17,15 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: renteninfo
-  password: <%= ENV['RENTENINFO_DATABASE_PASSWORD'] %>
+  host: db
+  username: postgres
+  password:
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
+  # host: localhost
   <<: *default
   database: renteninfo_development
 
