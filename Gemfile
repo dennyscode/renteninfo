@@ -11,7 +11,9 @@ gem "figaro"
 gem 'kaminari'
 gem 'rack', '~> 2.0.8'
 # Use Puma as the app server
-gem 'puma', '~> 3.4'
+
+
+gem "puma", ">= 3.12.4"
 gem 'sendgrid-ruby'
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 5'
