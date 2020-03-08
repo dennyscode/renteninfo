@@ -7,10 +7,6 @@ module QuestionsHelper
         end
     end
 
-    def test
-        puts "huhu"
-    end
-
     # puts "#{rente_estimate}, #{rente_art}, #{rente_start}, #{rente_dauer}, #{rente_eink}, #{rente_reg}, #{rente_kinder}, #{rente_kinder_gebjahr}, #{rente_betrieb}"
 
     def hilfsvar1(rente_start, rente_kinder)

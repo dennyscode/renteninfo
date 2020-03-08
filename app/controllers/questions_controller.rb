@@ -14,6 +14,7 @@ class QuestionsController < ApplicationController
         @hilfsvar4 = hilfsvar4(@question.rente_dauer) #rente_VBisZurRente
         @hilfsvar5 = hilfsvar5(@hilfsvar4, @hilfsvar2) #rente_vAnpassung
         @hilfsvar6 = hilfsvar6(@question.rente_estimate, @hilfsvar1, @hilfsvar4, @hilfsvar2)
+        @rente_jahrAktuell = Time.now.year.to_f
         @rente_heute = rente_heute(@hilfsvar2, @hilfsvar1, @hilfsvar3)
         @rente_fiktiv = rente_fiktiv(@hilfsvar6, @hilfsvar2, @hilfsvar1)
         @rente_notwendig = notwendiges_gehalt(@hilfsvar6, @durchschnittsentgeltRV_2019)

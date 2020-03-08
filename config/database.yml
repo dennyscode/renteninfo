@@ -1,13 +1,12 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  # host: localhost
   <<: *default
   database: renteninfo_development
-
 test:
   <<: *default
   database: renteninfo_test
@@ -15,45 +14,5 @@ test:
 production:
   <<: *default
   database: renteninfo_production
-
-  # Docker:
-  # default: &default
-  #   adapter: postgresql
-  #   encoding: unicode
-  #   host: db
-  #   username: postgres
-  #   password:
-  #   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
-  # development:
-  #   # host: localhost
-  #   <<: *default
-  #   database: renteninfo_development
-
-# test:
-#   <<: *default
-#   database: renteninfo_test
-
-# production:
-#   <<: *default
-#   database: renteninfo_production
-
-# Ubuntu:
-# default: &default
-#   adapter: postgresql
-#   encoding: unicode
-
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
-# development:
-#   <<: *default
-#   database: renteninfo_development
-# test:
-#   <<: *default
-#   database: renteninfo_test
-
-# production:
-#   <<: *default
-#   database: renteninfo_production
-#   username: renteninfo
-#   password: <%= ENV['RENTENINFO_DATABASE_PASSWORD'] %>
+  username: renteninfo
+  password: <%= ENV['RENTENINFO_DATABASE_PASSWORD'] %>

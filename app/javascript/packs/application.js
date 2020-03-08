@@ -25,6 +25,7 @@ import 'trix';
 import 'trix/dist/trix.js';
 import axios from 'axios';
 import chartjs from 'chart.js/dist/Chart.bundle';
+import chartjspluginannotation from '../javascript/vendors/chartjs-plugin-annotation';
 // import aironnecalendar from 'aironne-calendar';
 // require('./calendar')
 // import './calendar'
@@ -52,6 +53,7 @@ import '../packs/rechner';
 import '../packs/direct_upload';
 // import '../javascript/vendors/tippy';
 import '../javascript/active_tooltips';
+import '../packs/quizresults';
 
 
 

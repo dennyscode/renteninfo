@@ -39,8 +39,29 @@
         <p>Notwendige Jahre = (Vestimate/(VEntgeltpunkte* Vreg)) = <%= @rente_notwendigJahre %></p>
     </div>
 
+    <>
+    <canvas
+        id="myChart"
+        class="chartjs"
+        rente_hochrechnung="<%= @rente_hochrechnung %>"
+        rente_hochrechnungMitAnpassung="<%= @rente_hochrechnungMitAnpassung %>"
+        rente_VBisZurRente="<%= @hilfsvar4 %>"
+        rente_fiktiv="<%= @rente_fiktiv  %>"
+        rente_heute="<%= @rente_heute %>"
+        rente_notwendigJahre="<%= @rente_notwendigJahre %>"
+        rente_notwendigesGehalt="<%= @rente_notwendig %>"
+        rente_jahrAktuell="<%= @rente_jahrAktuell %>"
+    ></canvas>
 
-    <canvas id="myChart"></canvas>
+    <canvas
+        class="chartjs"
+        id="myPieChart"
+    ></canvas>
+
+    <canvas
+        class="chartjs"
+        id="myPieChart2"
+    ></canvas>
 
 </div>
 
