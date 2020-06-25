@@ -9,7 +9,7 @@ gem 'actiontext'
 gem 'pg', '>= 0.18', '< 2.0'
 gem "figaro"
 gem 'kaminari'
-gem 'rack', '~> 2.0.8'
+gem 'rack', '~> 2.1.4'
 # Use Puma as the app server
 
 
