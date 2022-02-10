@@ -15,7 +15,7 @@
     "google-fonts-webpack-plugin": "^0.4.4",
     "icomoon-build": "^0.2.8",
     "jquery": "^3.4.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "popper.js": "^1.15.0",
     "rails-erb-loader": "^5.5.2",
     "tippy.js": "^5.1.2",
