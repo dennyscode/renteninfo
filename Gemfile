@@ -31,7 +31,7 @@ gem 'capistrano-rbenv', '~> 2.1'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem 'rack-cors'
 gem "mini_magick"
 gem 'log4r', '~> 1.1', '>= 1.1.10'
