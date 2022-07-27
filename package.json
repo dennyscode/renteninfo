@@ -11,7 +11,7 @@
     "aironne-calendar": "https://github.com/dennyscode/aironne-calendar",
     "axios": "^0.19.0",
     "bootstrap": "4.3.1",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "google-fonts-webpack-plugin": "^0.4.4",
     "icomoon-build": "^0.2.8",
     "jquery": "^3.4.1",
